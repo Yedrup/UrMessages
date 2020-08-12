@@ -10,6 +10,7 @@
       "users": null,
       "title": "Molestias molestias",
       "date": "Sunday, August 2, 2020, 1:02:01 PM",
+      "dateInMs": 1596366121000,
       "content": "reiciendis asperiores tempore enim earum velit consequatur"
     },
     {
@@ -23,6 +24,7 @@
       ],
       "title": "Delectus itaque dolores",
       "date": "Sunday, August 2, 2020, 9:35:52 PM",
+      "dateInMs": 1596396952000,
       "content": "odio illo possimus veniam qui ratione nihil"
     },
     {
@@ -35,7 +37,8 @@
         "1fc378a6-4ee2-49fc-a562-ee3b305cb59c"
       ],
       "title": "Error consequatur",
-      "date": "Sunday, August 2, 2020, 9:35:52 PM",
+      "date": "Sunday, August 2, 2020, 10:35:22 PM",
+      "dateInMs": 1596400522000,
       "content": "odio illo possimus veniam qui ratione nihil"
     },
     {
@@ -49,6 +52,7 @@
       ],
       "title": "Consequuntur similique rerum",
       "date": "Sunday, August 2, 2020, 12:51:36 PM",
+      "dateInMs": 1596365496000,
       "content": "illo sed accusantium deserunt quod at inventore"
     },
     {
@@ -60,6 +64,7 @@
       "users": null,
       "title": "Porro cumque",
       "date": "Sunday, August 2, 2020, 6:00:31 PM",
+      "dateInMs": 1596384031000,
       "content": "corporis est ad voluptatum atque natus beatae"
     },
     {
@@ -73,6 +78,7 @@
         "55ac9363-267a-40bd-93b0-23cdb7dcb390"
       ],
       "date": "Sunday, August 2, 2020, 1:47:56 PM",
+      "dateInMs": 1596368876000,
       "content": "Doloremque tenetur dolore iure nisi quidem laudantium, hic earum necessitatibus",
       "threadId": "29711c6d-fe5a-4908-8094-ba31e102b28d"
     }
@@ -91,6 +97,7 @@
           "isThreadAllowed": false,
           "title": "Delectus itaque dolores",
           "date": "Sunday, August 2, 2020, 9:35:52 PM",
+          "dateInMs": 1596396952000,
           "content": "odio illo possimus veniam qui ratione nihil"
         }
       ]

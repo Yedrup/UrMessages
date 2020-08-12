@@ -10,6 +10,7 @@
       "users": null,
       "title": "Architecto alias saepe",
       "date": "Sunday, August 2, 2020, 4:05:31 AM",
+      "dateInMs": 1596333931000,
       "content": "ea aperiam quia nam commodi quam incidunt"
     },
     {
@@ -21,6 +22,7 @@
       "users": null,
       "title": "Dolorem perferendis in",
       "date": "Sunday, August 2, 2020, 7:30:15 AM",
+      "dateInMs": 1596346215000,
       "content": "vero architecto doloribus exercitationem aut veritatis eveniet"
     },
     {
@@ -32,6 +34,7 @@
       "users": null,
       "title": "Error consequatur",
       "date": "Sunday, August 2, 2020, 9:35:52 PM",
+      "dateInMs": 1596396952000,
       "content": "odio illo possimus veniam qui ratione nihil"
     },
     {
@@ -43,6 +46,7 @@
       "users": null,
       "title": "Delectus itaque dolores",
       "date": "Sunday, August 2, 2020, 6:14:23 PM",
+      "dateInMs": 1596384863000,
       "content": "quisquam soluta quasi deserunt illum nihil consequatur"
     },
     {
@@ -54,6 +58,7 @@
       "users": null,
       "title": "Repudiandae eum in",
       "date": "Sunday, August 1, 2020, 1:00:56 PM",
+      "dateInMs": 1596279656000,
       "content": "natus qui dolor voluptatem laboriosam iusto unde",
       "threadId": "cb15ac13-d1da-4e37-8045-35571fdc4e5d"
     }
@@ -71,7 +76,8 @@
           "isPublic": true,
           "isThreadAllowed": false,
           "title": "Delectus itaque dolores",
-          "date": "Sunday, August 2, 2020, 9:35:52 PM",
+          "date": "Sunday, August 2, 2020, 11:40:00 PM",
+          "dateInMs": 1596404400000,
           "content": "odio illo possimus veniam qui ratione nihil"
         },
         {
@@ -81,7 +87,8 @@
           "isPublic": true,
           "isThreadAllowed": false,
           "title": "Dolorem perferendis in",
-          "date": "Sunday, August 2, 2020, 9:45:30 PM",
+          "date": "Sunday, August 2, 2020, 11:56:80 PM",
+          "dateInMs": 1596405360000,
           "content": "vero architecto doloribus exercitationem aut veritatis eveniet"
         }
       ]
