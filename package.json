@@ -1,24 +1,52 @@
 {
-  "name": "with-jest",
+  "name": "urmessages",
   "version": "0.1.0",
+  "description": "UrMess@ges is an interface which receives, displays and sends messages - based on https://github.com/vercel/next.js/tree/canary/examples/with-jest. It's built with Nextjs, an API made with built in Next API creation, the session is linked to a fake database witch is default one with messages on refreshing.",
+  "author": "purdey.chambraud@gmail.com",
+  "license": "ISC",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.1.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "casual": "^1.6.2",
+    "casual-browserify": "^1.5.19-2",
+    "faker": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "next": "latest",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "styled-components": "^5.1.1",
+    "uuid": "^8.3.0",
+    "waait": "^1.0.5"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.1.0",
-    "@testing-library/react": "^9.4.0",
+    "@testing-library/react": "^9.5.0",
+    "babel-eslint": "^9.0.0",
     "babel-jest": "^25.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
+    "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0"
   }
 }

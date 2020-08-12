@@ -1,0 +1,99 @@
+{
+  "isPublic": false,
+  "messages": [
+    {
+      "id": "e0f17993-697b-4807-88b9-93e139396ddc",
+      "parentId": null,
+      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "users": null,
+      "title": "Molestias molestias",
+      "date": "Sunday, August 2, 2020, 1:02:01 PM",
+      "content": "reiciendis asperiores tempore enim earum velit consequatur"
+    },
+    {
+      "id": "934bae862-ddb7-4b9d-83fe-555c8734be4e",
+      "parentId": null,
+      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "users": [
+        "8d6e8320-30e6-44bc-8dc1-e48d0fd2f09d"
+      ],
+      "title": "Delectus itaque dolores",
+      "date": "Sunday, August 2, 2020, 9:35:52 PM",
+      "content": "odio illo possimus veniam qui ratione nihil"
+    },
+    {
+      "id": "934ba862-ddb7-4eb9d-83fe-555c8734be4e",
+      "parentId": null,
+      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "users": [
+        "1fc378a6-4ee2-49fc-a562-ee3b305cb59c"
+      ],
+      "title": "Error consequatur",
+      "date": "Sunday, August 2, 2020, 9:35:52 PM",
+      "content": "odio illo possimus veniam qui ratione nihil"
+    },
+    {
+      "id": "bcd2bd25-170b-4ab6-a241-e3ea9171e969",
+      "parentId": null,
+      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "users": [
+        "1fc378a6-4ee2-49fc-a562-ee3b305cb59c"
+      ],
+      "title": "Consequuntur similique rerum",
+      "date": "Sunday, August 2, 2020, 12:51:36 PM",
+      "content": "illo sed accusantium deserunt quod at inventore"
+    },
+    {
+      "id": "af1a5865-a036-4c37-b824-b9842119bb81",
+      "parentId": null,
+      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "users": null,
+      "title": "Porro cumque",
+      "date": "Sunday, August 2, 2020, 6:00:31 PM",
+      "content": "corporis est ad voluptatum atque natus beatae"
+    },
+    {
+      "id": "c4b1e9e2-0ca6-4a84-b6e5-538241f1b447",
+      "parentId": null,
+      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "users": [
+        "55ac9363-267a-40bd-93b0-23cdb7dcb390"
+      ],
+      "date": "Sunday, August 2, 2020, 1:47:56 PM",
+      "content": "Doloremque tenetur dolore iure nisi quidem laudantium, hic earum necessitatibus",
+      "threadId": "29711c6d-fe5a-4908-8094-ba31e102b28d"
+    }
+  ],
+  "threads": [
+    {
+      "parentId": "c4b1e9e2-0ca6-4a84-b6e5-538241f1b447",
+      "id": "29711c6d-fe5a-4908-8094-ba31e102b28d",
+      "isPublic": false,
+      "messages": [
+        {
+          "id": "934bae862-bbb7-4b9d-83fe-555c8734be4e",
+          "parentId": "29711c6d-fe5a-4908-8094-ba31e102b28d",
+          "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+          "isPublic": false,
+          "isThreadAllowed": false,
+          "title": "Delectus itaque dolores",
+          "date": "Sunday, August 2, 2020, 9:35:52 PM",
+          "content": "odio illo possimus veniam qui ratione nihil"
+        }
+      ]
+    }
+  ]
+}
