@@ -18,8 +18,8 @@ const LinkStyled = styled.button`
   font-size: 2rem;
 `;
 
-const Custom404 = props => {
-  let router = useRouter();
+const Custom404 = () => {
+  const router = useRouter();
   return (
     <Page404Styled>
       <h1>404 | Page Not found!</h1>

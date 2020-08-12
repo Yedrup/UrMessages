@@ -19,7 +19,7 @@ FakeDB.prototype.updateMessages = function(type, newValue) {
 };
 
 FakeDB.prototype.updateThreadMessages = function(type, newMessageValue) {
-  let listWhereToSearch = this.messages[type].threads;
+  const listWhereToSearch = this.messages[type].threads;
   const threadSearched = this.searchThread(type, newMessageValue.parentId);
 
   // create the thread if it doesn't exist
@@ -36,15 +36,15 @@ FakeDB.prototype.updateThreadMessages = function(type, newMessageValue) {
     ];
   } else {
     // update this thread messages to add the new message
-    let updateThreadSearched = { ...threadSearched };
+    const updateThreadSearched = { ...threadSearched };
     updateThreadSearched.messages = [
       ...updateThreadSearched.messages,
       newMessageValue,
     ];
     // find index to update the threads array
-    const threadToModifyIndex = listWhereToSearch.findIndex(currThread => {
-      return currThread.parentId === newMessageValue.parentId;
-    });
+    const threadToModifyIndex = listWhereToSearch.findIndex(
+      currThread => currThread.parentId === newMessageValue.parentId
+    );
 
     // remove the old thread state from threads and add the updated version
     this.messages[type].threads = [
@@ -57,11 +57,11 @@ FakeDB.prototype.updateThreadMessages = function(type, newMessageValue) {
 };
 
 FakeDB.prototype.findMessageById = function(type, id) {
-  let listWhereToSearch = this.messages[type].messages;
+  const listWhereToSearch = this.messages[type].messages;
   const messageSearched = findObjectByPropInArr(listWhereToSearch, 'id', id);
 
   // find and return the related thread if it exists
-  let thread = this.searchThread(type, id);
+  const thread = this.searchThread(type, id);
   if (!thread) return { message: messageSearched, thread: null };
   return { message: messageSearched, thread };
 };
@@ -71,7 +71,7 @@ FakeDB.prototype.getMessagesByType = function(type) {
 };
 
 FakeDB.prototype.searchThread = function(type, parentMessageId) {
-  let listWhereToSearch = this.messages[type].threads;
+  const listWhereToSearch = this.messages[type].threads;
   const threadSearched = findObjectByPropInArr(
     listWhereToSearch,
     'parentId',

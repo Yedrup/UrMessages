@@ -1,16 +1,16 @@
+// import wait from 'waait';
 import { currentFakeDB } from '../../../../fakeServerData/fake-database';
-import wait from 'waait';
 
 export default async function getMessageById(req, res) {
-  let type = req.body.isPublic ? 'public' : 'private';
+  const type = req.body.isPublic ? 'public' : 'private';
 
   // simulate having the right or not
   const hasRight = true;
   if (!hasRight) res.status(401).send("You don't have the necessary rights.");
 
   // check if the method is supported
-  let methodAllowed = ['POST', 'GET'];
-  let isMethodAllowed = methodAllowed.includes(req.method);
+  const methodAllowed = ['POST', 'GET'];
+  const isMethodAllowed = methodAllowed.includes(req.method);
   if (!isMethodAllowed) res.status(405).send('This Method is not allowed');
 
   // Post message for this route is a thread message treatment cause it's related to a specific message ID
