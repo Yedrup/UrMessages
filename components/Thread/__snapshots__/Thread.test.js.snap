@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Thread/> properly renders the component - snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h2>
+      Thread of Message c4b1e9e2-0ca6-4a84-b6e5-538241f1b447 
+    </h2>
+    <div
+      class="Thread__InitialMessage-sc-1ygzf59-0 gANVOl"
+    >
+      <article
+        class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+        data-testid="message-item"
+      >
+        <header>
+          <h3>
+            Lorem ipsum dolor sit amet consectetur 
+            <span>
+              🔒
+            </span>
+          </h3>
+        </header>
+        <section>
+          Doloremque tenetur dolore iure nisi quidem laudantium, hic earum necessitatibus
+          <p>
+            c4b1e9e2-0ca6-4a84-b6e5-538241f1b447
+          </p>
+        </section>
+        <footer>
+          <p>
+            Sunday, August 2, 2020, 1:47:56 PM
+          </p>
+        </footer>
+      </article>
+    </div>
+    <div
+      class="MessagesList__ListOfItemsStyled-epu0q5-0 dnvssR"
+      data-testid="thread-message-list"
+    >
+      <article
+        class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+        data-testid="message-item"
+      >
+        <header>
+          <h3>
+            Delectus itaque dolores 
+            <span>
+              🔒
+            </span>
+          </h3>
+        </header>
+        <section>
+          odio illo possimus veniam qui ratione nihil
+          <p>
+            934bae862-bbb7-4b9d-83fe-555c8734be4e
+          </p>
+        </section>
+        <footer>
+          <p>
+            Sunday, August 2, 2020, 9:35:52 PM
+          </p>
+        </footer>
+      </article>
+    </div>
+    <form
+      class="FormStyled-j8ogoe-0 iIBCUw"
+      data-test="form"
+      id="test"
+    >
+      <fieldset
+        aria-busy="false"
+      >
+        <label
+          for="title"
+        >
+          Title
+          <input
+            id="title"
+            name="title"
+            placeholder="Title"
+            required=""
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          for="content"
+        >
+          Message
+          <textarea
+            id="content"
+            name="content"
+            placeholder="Enter A Message"
+            required=""
+          />
+        </label>
+        <button
+          class="c-button"
+          data-testid="button-submit-message"
+          type="submit"
+        >
+          Submit
+        </button>
+      </fieldset>
+    </form>
+  </div>
+</DocumentFragment>
+`;

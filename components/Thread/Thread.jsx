@@ -25,7 +25,9 @@ const Thread = ({ parentMessage, thread }) => {
         <MessageItem message={{ ...parentMessage, isThreadAllowed: false }} />
       </InitialMessage>
       {isThreadMessages && <MessagesList messages={thread.messages} />}
-      {!isThreadMessages && <h3>Start a thread ! 👇</h3>}
+      {!isThreadMessages && (
+        <h3 data-testid="start-thread-message">Start a thread ! 👇</h3>
+      )}
       <CreateMessage
         ctx={{
           isPublic: parentMessage.isPublic,

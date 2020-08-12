@@ -36,17 +36,17 @@ const Message = ({ message }) => {
   const router = useRouter();
 
   // fallback in case there is no router.query.type
-  const type = router.query.type
-    ? router.query.type
+  const type = router?.query?.type
+    ? router?.query?.type
     : isPublic
     ? 'public'
     : 'private';
 
   // check if the current message is displayed on a thread page
-  const areWeOnMessageThreadPage = !!router.query.id;
+  const areWeOnMessageThreadPage = !!router?.query?.id;
 
   return (
-    <StyledMessageItem>
+    <StyledMessageItem data-testid="message-item">
       <header>
         <h3>
           {title} <span>{isPublic ? '📣' : '🔒'}</span>
@@ -67,7 +67,9 @@ const Message = ({ message }) => {
             as={`/messages/${type}/${id}`}
             key={id}
           >
-            <a className="c-button--text">SEE THREAD →</a>
+            <a data-testid="thread-link" className="c-button--text">
+              SEE THREAD →
+            </a>
           </Link>
         )}
       </footer>

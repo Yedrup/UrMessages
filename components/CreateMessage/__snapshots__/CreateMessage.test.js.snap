@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateMessage/> properly renders the component - snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="FormStyled-j8ogoe-0 iIBCUw"
+    data-test="form"
+    id="test"
+  >
+    <fieldset
+      aria-busy="false"
+    >
+      <label
+        for="title"
+      >
+        Title
+        <input
+          id="title"
+          name="title"
+          placeholder="Title"
+          required=""
+          type="text"
+          value=""
+        />
+      </label>
+      <label
+        for="content"
+      >
+        Message
+        <textarea
+          id="content"
+          name="content"
+          placeholder="Enter A Message"
+          required=""
+        />
+      </label>
+      <button
+        class="c-button"
+        data-testid="button-submit-message"
+        type="submit"
+      >
+        Submit
+      </button>
+    </fieldset>
+  </form>
+</DocumentFragment>
+`;

@@ -92,8 +92,13 @@ const CreateMessage = ({ ctx }) => {
             value={values.content}
           />
         </label>
-        <button type="submit" className="c-button">
-          Submit{stateUI.isBusy ? 'ting' : ''}
+        {stateUI?.isBusy && <p data-testid="test">test</p>}
+        <button
+          type="submit"
+          className="c-button"
+          data-testid="button-submit-message"
+        >
+          Submit{stateUI?.isBusy ? 'ting' : ''}
         </button>
       </fieldset>
     </FormStyled>

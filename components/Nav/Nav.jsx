@@ -4,13 +4,13 @@ import NavStyled from './NavStyled';
 
 const Nav = () => {
   const router = useRouter();
-  const { asPath: currentPath, query } = router;
+  const { asPath: currentPath } = router;
 
   const getActiveClass = (currentPath, linkPath) =>
     currentPath === linkPath ? 'link--active' : '';
 
   return (
-    <NavStyled data-test-id="nav">
+    <NavStyled>
       <li>
         <Link href="/">
           <a className={`link ${getActiveClass(currentPath, '/')}`}>🏡 Home</a>

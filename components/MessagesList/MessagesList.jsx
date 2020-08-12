@@ -11,9 +11,9 @@ const ListOfItemsStyled = styled.div`
 `;
 
 const MessagesList = ({ messages }) => {
-  if (!messages && !messages?.length) return null;
+  if (!messages?.length) return null;
   return (
-    <ListOfItemsStyled>
+    <ListOfItemsStyled data-testid="thread-message-list">
       {messages.map(message => {
         return <MessageItem message={message} key={message?.id} />;
       })}

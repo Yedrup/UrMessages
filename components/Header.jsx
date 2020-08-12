@@ -44,7 +44,7 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-  const { stateUI } = useContext(UIStateContext);
+  // const { stateUI } = useContext(UIStateContext);
 
   return (
     <StyledHeader>

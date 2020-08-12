@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageList/> properly renders the component - snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MessagesList__ListOfItemsStyled-epu0q5-0 dnvssR"
+    data-testid="thread-message-list"
+  >
+    <article
+      class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+      data-testid="message-item"
+    >
+      <header>
+        <h3>
+          Architecto alias saepe 
+          <span>
+            📣
+          </span>
+        </h3>
+      </header>
+      <section>
+        ea aperiam quia nam commodi quam incidunt
+        <p>
+          9f72b5e2-9cee-4003-8356-ad48745579be
+        </p>
+      </section>
+      <footer>
+        <p>
+          Sunday, August 2, 2020, 4:05:31 AM
+        </p>
+        <a
+          class="c-button--text"
+          data-testid="thread-link"
+          href="/messages/public/9f72b5e2-9cee-4003-8356-ad48745579be"
+        >
+          SEE THREAD →
+        </a>
+      </footer>
+    </article>
+    <article
+      class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+      data-testid="message-item"
+    >
+      <header>
+        <h3>
+          Dolorem perferendis in 
+          <span>
+            📣
+          </span>
+        </h3>
+      </header>
+      <section>
+        vero architecto doloribus exercitationem aut veritatis eveniet
+        <p>
+          5a707960-1c54-4bde-a5b9-c83a3318b24a
+        </p>
+      </section>
+      <footer>
+        <p>
+          Sunday, August 2, 2020, 7:30:15 AM
+        </p>
+        <a
+          class="c-button--text"
+          data-testid="thread-link"
+          href="/messages/public/5a707960-1c54-4bde-a5b9-c83a3318b24a"
+        >
+          SEE THREAD →
+        </a>
+      </footer>
+    </article>
+  </div>
+</DocumentFragment>
+`;

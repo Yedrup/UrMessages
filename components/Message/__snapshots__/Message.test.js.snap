@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Message/> properly renders the component - snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+    data-testid="message-item"
+  >
+    <header>
+      <h3>
+        Molestias molestias 
+        <span>
+          🔒
+        </span>
+      </h3>
+    </header>
+    <section>
+      reiciendis asperiores tempore enim earum velit consequatur
+      <p>
+        e0f17993-697b-4807-88b9-93e139396ddc
+      </p>
+    </section>
+    <footer>
+      <p>
+        Sunday, August 2, 2020, 1:02:01 PM
+      </p>
+      <a
+        class="c-button--text"
+        data-testid="thread-link"
+        href="/messages/private/e0f17993-697b-4807-88b9-93e139396ddc"
+      >
+        SEE THREAD →
+      </a>
+    </footer>
+  </article>
+</DocumentFragment>
+`;
