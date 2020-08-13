@@ -25,7 +25,6 @@ export const DataReducer = (state, action) => {
   switch (action.type) {
     case 'INITIALIZE_ALL_LISTS_TYPES':
       let { payload } = action;
-
       let updatedState = Object.entries(state).reduce((acc, curr) => {
         const [nameStateProp, nameStateVal] = curr;
         // If not a list return it as it is
@@ -34,8 +33,7 @@ export const DataReducer = (state, action) => {
         }
         // Return the current list if already init
         if (state[nameStateProp].isInit) {
-          let updated = { [nameStateProp]: { ...state[nameStateProp] } };
-          return { ...updated };
+          return { ...acc, ...state[nameStateProp] };
         }
         // Need to be init in store
         return {
