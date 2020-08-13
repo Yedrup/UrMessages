@@ -5,6 +5,7 @@ import DataProvider from '../../contexts/DataContext';
 import UIProvider from '../../contexts/UIContext';
 import Page from '../containers/Page';
 import '../../public/nprogress.css';
+import 'simplebar/dist/simplebar.min.css';
 
 // Display progress bar on changing route
 

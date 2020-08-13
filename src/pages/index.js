@@ -16,6 +16,12 @@ const Home = ({ pageProps }) => {
   const { dispatchUI } = useContext(UIDispatchContext);
   const { isStoreInit } = stateData;
 
+  const lastPublicMessage =
+    stateData?.public?.messages[stateData?.public?.messages?.length - 1];
+
+  const lastPrivateMessage =
+    stateData?.private?.messages[stateData?.private?.messages?.length - 1];
+
   // ssr rendering, initialize store lists with the data
   if (!isStoreInit && data) {
     dispatchData({
@@ -57,12 +63,15 @@ const Home = ({ pageProps }) => {
       loadData().catch(errorHandler);
     }
     return () => {};
-  }, [data, stateData, dispatchData, dispatchUI]);
+  }, [lastPublicMessage, lastPrivateMessage]);
 
   return (
     <div>
       <h1>Welcome on UrMess@ges!</h1>
-      <MessagesHome />
+      <MessagesHome
+        lastPublicMessage={lastPublicMessage}
+        lastPrivateMessage={lastPrivateMessage}
+      />
     </div>
   );
 };

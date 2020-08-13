@@ -3,36 +3,66 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import Avatar, { avatarSize } from '../Avatar';
+import getRandomAvatarPhoto from '../../lib/utils/getRandomAvatar';
 
 const StyledMessageItem = styled.article`
-  --padding: 1rem;
+  --padding: 1rem 2.5rem;
   padding: 0;
-  background: #353535;
+  background: ${({ theme }) => theme.backgroundCard};
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.elevation1};
   &:hover {
     box-shadow: ${({ theme }) => theme.elevation8};
   }
   header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: var(--padding);
-    text-align: left;
+    color: #aaeeee;
+    & h3 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .user {
+      margin-right: 1rem;
+      display: flex;
+      span {
+        margin-left: 1rem;
+      }
+      .username {
+        color: #aaeeeede;
+      }
+    }
   }
   section {
     padding: var(--padding);
-    background: #454545;
+    overflow-wrap: anywhere;
     text-align: justify;
-    color: whitesmoke;
+    color: ${({ theme }) => theme.offWhite};
+    p {
+      background: #0000002b;
+      padding: 2rem 1rem;
+    }
   }
   footer {
     padding: var(--padding);
     text-align: right;
     color: grey;
+    p {
+      margin: 0.5rem;
+    }
+    .small-text {
+      font-size: 1.3rem;
+    }
   }
 `;
 
 const Message = ({ message }) => {
   if (!message) return null;
-  const { title, isPublic, content, id, isThreadAllowed, date } = message;
+  const { title, isPublic, content, id, isThreadAllowed, date, user } = message;
   const router = useRouter();
 
   // fallback in case there is no router.query.type
@@ -42,6 +72,7 @@ const Message = ({ message }) => {
     ? 'public'
     : 'private';
 
+  const imageUrl = getRandomAvatarPhoto(avatarSize);
   // check if the current message is displayed on a thread page
   const areWeOnMessageThreadPage = !!router?.query?.id;
 
@@ -49,15 +80,20 @@ const Message = ({ message }) => {
     <StyledMessageItem data-testid="message-item">
       <header>
         <h3>
-          {title} <span>{isPublic ? '📣' : '🔒'}</span>
+          <span>{title}</span>
+          <span>{isPublic ? '📣' : '🔒'} </span>
         </h3>
+        <div className="user">
+          <Avatar imageUrl={imageUrl} />
+          <span className="username">{user}</span>
+        </div>
       </header>
       <section>
-        {content}
-        <p>{id}</p>
+        <p>{content}</p>
       </section>
       <footer>
         <p>{date}</p>
+        {/* <p className="small-text">id:{id}</p> */}
         {isThreadAllowed && !areWeOnMessageThreadPage && (
           <Link
             href={{

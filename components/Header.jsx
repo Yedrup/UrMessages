@@ -34,8 +34,8 @@ const StyledHeader = styled.header`
     grid-template-columns: auto 1fr;
     justify-content: space-between;
     align-items: stretch;
-    background: #202020;
-    border-bottom: 0.35rem solid #121212;
+    background: #291c29;
+    box-shadow: ${({ theme }) => theme.elevation3};
     @media (max-width: 1300px) {
       grid-template-columns: 1fr;
       justify-content: center;

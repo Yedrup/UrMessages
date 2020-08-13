@@ -1,16 +1,11 @@
-import React, { useContext } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-
-import { DataStateContext } from '../../contexts/DataContext';
-
 import MessagesPage from '../containers/MessagesPage';
 import Message from '../../components/Message/Message';
 
 const SectionHome = styled.section`
   header {
     display: flex;
-    align-items: center;
   }
   header a:before {
     content: '→';
@@ -26,15 +21,7 @@ const SectionHome = styled.section`
   }
 `;
 
-const MessagesHome = props => {
-  const { stateData } = useContext(DataStateContext);
-
-  const lastPublicMessage =
-    stateData?.public?.messages[stateData?.public?.messages?.length - 1];
-
-  const lastPrivateMessage =
-    stateData?.private?.messages[stateData?.private?.messages?.length - 1];
-
+const MessagesHome = ({ lastPublicMessage, lastPrivateMessage }) => {
   return (
     <div>
       <MessagesPage headTitle="✉️ Home">

@@ -10,7 +10,6 @@ export const loading = keyframes`
 `;
 
 const FormStyled = styled.form`
-  max-width: 80rem;
   margin: 2rem auto;
   border: 2px solid grey;
   padding: 1.5rem;
@@ -43,9 +42,10 @@ const FormStyled = styled.form`
   }
   button,
   input[type='submit'] {
-    font-size: 1.85rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.05rem;
   }
   fieldset {
     border: 0;

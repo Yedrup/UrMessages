@@ -12,7 +12,6 @@ const InitialMessage = styled.div`
     margin: auto;
     background: black;
     color: #aaeeee;
-    padding: 2rem 4rem;
   }
 `;
 
