@@ -16,23 +16,30 @@ import {
 import { findObjectByPropInArr } from '../../../../lib/utils/utils';
 import Message from '../../../../components/Message/Message';
 import Thread from '../../../../components/Thread/Thread';
+import ProtectedWrapper from '../../../../components/ProtectedWrapper';
 
 const SingleMessagePage = ({ pageProps }) => {
-  const { message, thread } = pageProps;
-
+  const { message, thread, SSRErr } = pageProps;
   const router = useRouter();
-  let { type, id } = router.query;
-
   const { dispatchUI } = useContext(UIDispatchContext);
   const { stateUI } = useContext(UIStateContext);
   const { stateData } = useContext(DataStateContext);
   const { dispatchData } = useContext(DataDispatchContext);
 
+  let { type, id } = router.query;
   const [singleMessage, setSingleMessage] = useState(message);
   const [singleMessageThread, setSingleMessageThread] = useState(thread);
+  const [error, setError] = useState(SSRErr);
 
-  // function to get this specific message from store
-  const getThisMessage = () => {
+  const handleError = err => {
+    dispatchUI({
+      type: 'IS_ERROR',
+    });
+    setError(err);
+  };
+
+  // Function to get this specific message from store
+  const getThisMessageFromStore = () => {
     let thisTypeList = stateData[type];
     const messageSearched = findObjectByPropInArr(
       thisTypeList.messages,
@@ -44,76 +51,104 @@ const SingleMessagePage = ({ pageProps }) => {
       'parentId',
       id
     );
+    console.log(messageSearched, threadSearched);
+    if (!messageSearched) {
+      let err = new Error('Message not found! 😕');
+      throw err;
+    }
     return { messageSearched, threadSearched };
   };
 
-  // init store with this list
+  // Init store with this list type
   const initStore = async () => {
     dispatchUI({
       type: 'START_LOADING',
     });
-    await getAllMessagesFromType({ type })
-      .then(result => {
-        dispatchData({
-          type: 'INIT_LIST',
-          payload: { messages: result, type },
-        });
-        dispatchUI({
-          type: 'END_LOADING',
-        });
-      })
-      .catch(err => console.log(err));
+    try {
+      const result = await getAllMessagesFromType({ type });
+      dispatchData({
+        type: 'INIT_LIST',
+        payload: { messages: result, type },
+      });
+    } catch (err) {
+      handleError(err);
+    }
+    dispatchUI({
+      type: 'END_LOADING',
+    });
   };
 
+  // Manage error coming from SSR
+  useEffect(() => {
+    if (SSRErr) {
+      handleError(SSRErr);
+    }
+    return () => {};
+  }, []);
+
+  // Triggered on modification from current list type in Store
   useEffect(() => {
     // If the store is not init for this type list, we fetch it to store it and use it.
     if (!stateData[type].messages.length || !stateData[type].isInit) {
       initStore();
     }
-
-    // find the message and its thread (if it exists) in the store to save it in this state
-    let { messageSearched, threadSearched } = getThisMessage();
-    setSingleMessage(messageSearched);
-    setSingleMessageThread(threadSearched);
+    // Find the message and its thread (if it exists) in the store to save it in this state
+    try {
+      let { messageSearched, threadSearched } = getThisMessageFromStore();
+      setSingleMessage(messageSearched);
+      setSingleMessageThread(threadSearched);
+    } catch (err) {
+      handleError(err);
+    }
     return () => {};
   }, [stateData[type]]);
 
-  if (stateUI.isLoading) return <p>Loading...</p>;
-  if (stateUI.isError || !singleMessage)
-    return (
-      <div>{stateUI?.isError ? stateUI?.errorMessage : '404 not found'}</div>
-    );
-
-  // depending on if the thread is allow for a message we display a thread component or just the Message component
-  if (singleMessage?.isThreadAllowed) {
-    return (
-      <Thread parentMessage={singleMessage} thread={singleMessageThread} />
-    );
-  } else {
-    return <Message message={singleMessage} />;
-  }
+  /* If thread is allowed for this message, we display thread component , if it's not allowed, we just display the Single Message component */
+  return (
+    <ProtectedWrapper>
+      {stateUI?.isLoading && <p>Loading...</p>}
+      {!singleMessage && (
+        <div>
+          {stateUI?.isError && error?.customMessage
+            ? error?.customMessage
+            : error?.message
+            ? error?.message
+            : '404 not found'}
+        </div>
+      )}
+      {singleMessage?.isThreadAllowed ? (
+        <Thread parentMessage={singleMessage} thread={singleMessageThread} />
+      ) : (
+        <Message message={singleMessage} />
+      )}
+    </ProtectedWrapper>
+  );
 };
 
 export default SingleMessagePage;
 
-SingleMessagePage.getInitialProps = async ({ query, req, ...ctx }) => {
-  // client code
+SingleMessagePage.getInitialProps = async ({ query, req, error, ...ctx }) => {
+  // Client code
   if (!req) {
     return { message: null, thread: null };
   }
 
   // SSR code
   let { id, type } = query;
-  const { message, thread } = await getSingleMessageById({
+  let SSRErr = null;
+  const data = await getSingleMessageById({
     type,
     id,
-  }).catch(err => console.log('SSR HANDLER ERROR PAGE [type][id] PAGE', err));
+  }).catch(err => {
+    SSRErr = { ...err };
+  });
 
-  if (!message) return { message: null, thread: null };
-  return { message, thread };
+  if (!data?.message) return { message: null, thread: null, SSRErr };
+  return { message: data?.message, thread: data?.thread, SSRErr: null };
 };
 
 SingleMessagePage.propTypes = {
   message: PropTypes.object,
   thread: PropTypes.object,
+  SSRErr: PropTypes.object,
 };

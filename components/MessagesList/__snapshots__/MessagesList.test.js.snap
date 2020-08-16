@@ -3,71 +3,160 @@
 exports[`<MessageList/> properly renders the component - snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MessagesList__ListOfItemsStyled-epu0q5-0 dnvssR"
-    data-testid="thread-message-list"
+    class="MessagesList__SimpleBarStyled-epu0q5-0 AXUei"
+    data-simplebar="init"
+    style="max-height: 900px;"
   >
-    <article
-      class="Message__StyledMessageItem-uraoec-0 dDlRBV"
-      data-testid="message-item"
+    <div
+      class="simplebar-wrapper"
     >
-      <header>
-        <h3>
-          Architecto alias saepe 
-          <span>
-            📣
-          </span>
-        </h3>
-      </header>
-      <section>
-        ea aperiam quia nam commodi quam incidunt
-        <p>
-          9f72b5e2-9cee-4003-8356-ad48745579be
-        </p>
-      </section>
-      <footer>
-        <p>
-          Sunday, August 2, 2020, 4:05:31 AM
-        </p>
-        <a
-          class="c-button--text"
-          data-testid="thread-link"
-          href="/messages/public/9f72b5e2-9cee-4003-8356-ad48745579be"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+          style="right: 0px; bottom: 0px;"
         >
-          SEE THREAD →
-        </a>
-      </footer>
-    </article>
-    <article
-      class="Message__StyledMessageItem-uraoec-0 dDlRBV"
-      data-testid="message-item"
+          <div
+            class="simplebar-content-wrapper"
+            style="height: auto; overflow-x: hidden; overflow-y: hidden;"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="MessagesList__ListOfItemsStyled-epu0q5-1 fefGqq"
+                data-testid="thread-message-list"
+              >
+                <article
+                  class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+                  data-testid="message-item"
+                >
+                  <header>
+                    <h3>
+                      <span>
+                        Architecto alias saepe
+                      </span>
+                      <span>
+                        📣 
+                      </span>
+                    </h3>
+                    <div
+                      class="user"
+                    >
+                      <div
+                        class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+                      >
+                        <img
+                          alt="user"
+                          src="https://i.pravatar.cc/70px?u=undefined"
+                        />
+                      </div>
+                      <span
+                        class="username"
+                      />
+                    </div>
+                  </header>
+                  <section>
+                    <p>
+                      ea aperiam quia nam commodi quam incidunt
+                    </p>
+                  </section>
+                  <footer>
+                    <p>
+                      Sunday, August 2, 2020, 4:05:31 AM
+                    </p>
+                    <a
+                      class="c-button--text"
+                      data-testid="thread-link"
+                      href="/messages/public/9f72b5e2-9cee-4003-8356-ad48745579be"
+                    >
+                      SEE THREAD →
+                    </a>
+                  </footer>
+                </article>
+                <article
+                  class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+                  data-testid="message-item"
+                >
+                  <header>
+                    <h3>
+                      <span>
+                        Dolorem perferendis in
+                      </span>
+                      <span>
+                        📣 
+                      </span>
+                    </h3>
+                    <div
+                      class="user"
+                    >
+                      <div
+                        class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+                      >
+                        <img
+                          alt="user"
+                          src="https://i.pravatar.cc/70px?u=undefined"
+                        />
+                      </div>
+                      <span
+                        class="username"
+                      />
+                    </div>
+                  </header>
+                  <section>
+                    <p>
+                      vero architecto doloribus exercitationem aut veritatis eveniet
+                    </p>
+                  </section>
+                  <footer>
+                    <p>
+                      Sunday, August 2, 2020, 7:30:15 AM
+                    </p>
+                    <a
+                      class="c-button--text"
+                      data-testid="thread-link"
+                      href="/messages/public/5a707960-1c54-4bde-a5b9-c83a3318b24a"
+                    >
+                      SEE THREAD →
+                    </a>
+                  </footer>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+        style="width: 0px; height: 0px;"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+      style="visibility: hidden;"
     >
-      <header>
-        <h3>
-          Dolorem perferendis in 
-          <span>
-            📣
-          </span>
-        </h3>
-      </header>
-      <section>
-        vero architecto doloribus exercitationem aut veritatis eveniet
-        <p>
-          5a707960-1c54-4bde-a5b9-c83a3318b24a
-        </p>
-      </section>
-      <footer>
-        <p>
-          Sunday, August 2, 2020, 7:30:15 AM
-        </p>
-        <a
-          class="c-button--text"
-          data-testid="thread-link"
-          href="/messages/public/5a707960-1c54-4bde-a5b9-c83a3318b24a"
-        >
-          SEE THREAD →
-        </a>
-      </footer>
-    </article>
+      <div
+        class="simplebar-scrollbar simplebar-visible"
+        style="width: 0px; display: none;"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+      style="visibility: hidden;"
+    >
+      <div
+        class="simplebar-scrollbar simplebar-visible"
+        style="height: 0px; display: none;"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

@@ -3,21 +3,37 @@
 exports[`<Message/> properly renders the component - snapshot 1`] = `
 <DocumentFragment>
   <article
-    class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+    class="Message__StyledMessageItem-uraoec-0 fdDMYU"
     data-testid="message-item"
   >
     <header>
       <h3>
-        Molestias molestias 
         <span>
-          🔒
+          Molestias molestias
+        </span>
+        <span>
+          🔒 
         </span>
       </h3>
+      <div
+        class="user"
+      >
+        <div
+          class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+        >
+          <img
+            alt="user"
+            src="https://i.pravatar.cc/70px?u=undefined"
+          />
+        </div>
+        <span
+          class="username"
+        />
+      </div>
     </header>
     <section>
-      reiciendis asperiores tempore enim earum velit consequatur
       <p>
-        e0f17993-697b-4807-88b9-93e139396ddc
+        reiciendis asperiores tempore enim earum velit consequatur
       </p>
     </section>
     <footer>

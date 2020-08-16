@@ -1,5 +1,4 @@
 import { createContext, useReducer } from 'react';
-
 export const UIStateContext = createContext();
 export const UIDispatchContext = createContext();
 
@@ -8,7 +7,6 @@ const initialUiState = {
   isLoading: false,
   isBusy: false,
   isError: false,
-  errorMessage: 'Something went wrong',
 };
 
 export const UIReducer = (state, action) => {
@@ -21,41 +19,38 @@ export const UIReducer = (state, action) => {
         isLoading: true,
         isError: false,
         isBusy: true,
-        errorMessage: initialUiState.errorMessage,
       };
-
     case 'END_LOADING':
       return {
         ...state,
         isLoading: false,
         isBusy: false,
       };
-
     case 'START_BUSY':
       return {
         ...state,
         isBusy: true,
+        isError: false,
       };
-
     case 'END_BUSY':
       return {
         ...state,
         isBusy: false,
       };
-
     case 'IS_ERROR':
       return {
         ...state,
-        errorMessage: action.payload.customMessage,
         isLoading: false,
         isBusy: false,
         isError: true,
       };
-
-    // we reset the state
     case 'IS_SUCCESS':
       return {
         ...state,
+        ...initialUiState,
+      };
+    case 'RESET':
+      return {
         ...initialUiState,
       };
     default:

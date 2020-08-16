@@ -5,6 +5,7 @@ import {
   DataStateContext,
   DataDispatchContext,
 } from '../../contexts/DataContext';
+import { UserStateContext } from '../../contexts/UserContext';
 import { UIDispatchContext } from '../../contexts/UIContext';
 import MessagesHome from './messages';
 import { getAllMessages } from '../../lib/data-treatment-service';
@@ -12,6 +13,7 @@ import { getAllMessages } from '../../lib/data-treatment-service';
 const Home = ({ pageProps }) => {
   const { data } = pageProps;
   const { stateData } = useContext(DataStateContext);
+  const { stateUser } = useContext(UserStateContext);
   const { dispatchData } = useContext(DataDispatchContext);
   const { dispatchUI } = useContext(UIDispatchContext);
   const { isStoreInit } = stateData;
@@ -22,7 +24,7 @@ const Home = ({ pageProps }) => {
   const lastPrivateMessage =
     stateData?.private?.messages[stateData?.private?.messages?.length - 1];
 
-  // ssr rendering, initialize store lists with the data
+  // SSR rendering, initialize store lists with the data
   if (!isStoreInit && data) {
     dispatchData({
       type: 'INITIALIZE_ALL_LISTS_TYPES',
@@ -31,10 +33,9 @@ const Home = ({ pageProps }) => {
   }
 
   useEffect(() => {
-    // when navigating the data is set to null inside getInitialProps
-    // init the store with public messages
+    // When navigating the data is set to null inside getInitialProps
+    // Init the store with public messages
     const errorHandler = err => {
-      console.log('ERROR HANDLER 📃 INDEX PAGE  ====>', err);
       dispatchUI({
         type: 'IS_ERROR',
         payload: { ...err },
@@ -45,9 +46,9 @@ const Home = ({ pageProps }) => {
       dispatchUI({
         type: 'START_LOADING',
       });
-      await getAllMessages()
+      await getAllMessages({ userId: stateUser?.userId })
         .then(result => {
-          // initialize all the lists in store
+          // Initialize all the lists in store
           dispatchData({
             type: 'INITIALIZE_ALL_LISTS_TYPES',
             payload: { ...result },
@@ -63,23 +64,21 @@ const Home = ({ pageProps }) => {
       loadData().catch(errorHandler);
     }
     return () => {};
+    // eslint-disable-next-line
   }, [lastPublicMessage, lastPrivateMessage]);
 
   return (
-    <div>
-      <h1>Welcome on UrMess@ges!</h1>
-      <MessagesHome
-        lastPublicMessage={lastPublicMessage}
-        lastPrivateMessage={lastPrivateMessage}
-      />
-    </div>
+    <MessagesHome
+      lastPublicMessage={lastPublicMessage}
+      lastPrivateMessage={lastPrivateMessage}
+    />
   );
 };
 
 export default Home;
 
 Home.getInitialProps = async function({ req }) {
-  // client code
+  // Client code
   if (!req) {
     return { data: null };
   }

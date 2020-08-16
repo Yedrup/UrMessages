@@ -4,7 +4,7 @@
     {
       "id": "9f72b5e2-9cee-4003-8356-ad48745579be",
       "parentId": null,
-      "user": "e33c94de-8c4d-44d8-95bf-8d491a82846a",
+      "userId": "e33c94de-8c4d-44d8-95bf-8d491a82846a",
       "isPublic": true,
       "isThreadAllowed": true,
       "users": null,
@@ -16,7 +16,7 @@
     {
       "id": "5a707960-1c54-4bde-a5b9-c83a3318b24a",
       "parentId": null,
-      "user": "91d979ae-2ea2-4c8b-932f-156299a2f8bb",
+      "userId": "91d979ae-2ea2-4c8b-932f-156299a2f8bb",
       "isPublic": true,
       "isThreadAllowed": true,
       "users": null,
@@ -28,7 +28,7 @@
     {
       "id": "934ba862-ddb7-4b9d-83fe-555c8734be4e",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "1677f769-8fb5-41b1-aa42-9110379a1717",
       "isPublic": true,
       "isThreadAllowed": true,
       "users": null,
@@ -40,7 +40,7 @@
     {
       "id": "c3b8275c-9e99-4bdd-8aa4-f64e928cbe10",
       "parentId": null,
-      "user": "582d4589-b915-42f1-b616-6018f8e804ee",
+      "userId": "582d4589-b915-42f1-b616-6018f8e804ee",
       "isPublic": true,
       "isThreadAllowed": true,
       "users": null,
@@ -52,7 +52,7 @@
     {
       "id": "324eaa4b-7b4f-44d0-a156-798fe73f85dc",
       "parentId": null,
-      "user": "e33c94de-8c4d-44d8-95bf-8d491a82846a",
+      "userId": "e33c94de-8c4d-44d8-95bf-8d491a82846a",
       "isPublic": true,
       "isThreadAllowed": true,
       "users": null,
@@ -71,7 +71,7 @@
         {
           "id": "934baecc862-ddb7-4b9d-83fe-555c8734be4e",
           "parentId": "cb15ac13-d1da-4e37-8045-35571fdc4e5d",
-          "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+          "userId": "1677f769-8fb5-41b1-aa42-9110379a1717",
           "isPublic": true,
           "isThreadAllowed": false,
           "title": "Delectus itaque dolores",
@@ -81,7 +81,7 @@
         },
         {
           "id": "934badde862-ddb7-4b9d-83fe-555c8734be4e",
-          "user": "55ac9363-267a-40bd-93b0-23cdb7dcb390",
+          "userId": "55ac9363-267a-40bd-93b0-23cdb7dcb390",
           "parentId": "cb15ac13-d1da-4e37-8045-35571fdc4e5d",
           "isPublic": true,
           "isThreadAllowed": false,

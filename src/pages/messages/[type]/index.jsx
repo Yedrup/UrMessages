@@ -1,11 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { getAllMessagesFromType } from '../../../../lib/data-treatment-service';
-import {
-  UIDispatchContext,
-  UIStateContext,
-} from '../../../../contexts/UIContext';
+import { UIDispatchContext } from '../../../../contexts/UIContext';
 import {
   DataStateContext,
   DataDispatchContext,
@@ -13,16 +10,15 @@ import {
 import MessagesPage from '../../../containers/MessagesPage';
 import MessagesList from '../../../../components/MessagesList/MessagesList';
 import CreateMessage from '../../../../components/CreateMessage/CreateMessage';
+import ProtectedWrapper from '../../../../components/ProtectedWrapper';
 
 // TODO: get context to pass private messages
 const MessagesByTypePage = ({ pageProps }) => {
   const { data } = pageProps;
-
   const router = useRouter();
   const { type: typeFromRouter } = router.query;
 
   const { dispatchUI } = useContext(UIDispatchContext);
-  const { stateUI } = useContext(UIStateContext);
   const { stateData } = useContext(DataStateContext);
   const { dispatchData } = useContext(DataDispatchContext);
 
@@ -35,9 +31,7 @@ const MessagesByTypePage = ({ pageProps }) => {
     setCurrentType(typeFromRouter);
   }
 
-  /***** TODO: external START*/
   const errorHandler = err => {
-    console.log('HANDLER ERROR ALL BY TYPE [type]', err);
     dispatchUI({
       type: 'IS_ERROR',
       payload: { ...err },
@@ -56,7 +50,7 @@ const MessagesByTypePage = ({ pageProps }) => {
     let { type } = router.query;
     await getAllMessagesFromType({ type })
       .then(messages => {
-        // init if not already in store
+        // Init the list if not already in store
         if (!isThisListInitInStore) {
           initList(messages, type);
         } else {
@@ -71,7 +65,7 @@ const MessagesByTypePage = ({ pageProps }) => {
       })
       .catch(errorHandler);
   }
-  // triggered on changing the current type
+  // Triggered on changing the current type
   useEffect(() => {
     // We are passing by navigation so we need to call the api
     if (!data) {
@@ -84,31 +78,30 @@ const MessagesByTypePage = ({ pageProps }) => {
     return () => {};
   }, [currentType]);
 
-  if (stateUI?.isError && !stateUI.isLoading) {
-    return (
-      <div>{stateUI?.isError ? stateUI?.errorMessage : '404 not found'}</div>
-    );
-  }
-  if (stateUI.isLoading) return <p>loading...</p>;
+  const getPageTitleFormatted = (type, title) => {
+    return type === 'public' ? `${type} ${title} 📣` : `${type} ${title} 🔒`;
+  };
 
   return (
-    <MessagesPage
-      headTitle={`✉️ ${currentType}`}
-      title={`${currentType} Messages`}
-    >
-      <MessagesList
-        messages={
-          stateData[currentType]?.messages?.length
-            ? stateData[currentType]?.messages
-            : data?.messages
-        }
-      />
-      <CreateMessage
-        ctx={{
-          isPublic: data?.isPublic || stateData[currentType]?.isPublic,
-        }}
-      />
-    </MessagesPage>
+    <ProtectedWrapper>
+      <MessagesPage
+        headTitle={`✉️ ${currentType}`}
+        title={getPageTitleFormatted(currentType, 'Messages')}
+      >
+        <MessagesList
+          messages={
+            stateData[currentType]?.messages?.length
+              ? stateData[currentType]?.messages
+              : data?.messages
+          }
+        />
+        <CreateMessage
+          ctx={{
+            isPublic: data?.isPublic || stateData[currentType]?.isPublic,
+          }}
+        />
+      </MessagesPage>
+    </ProtectedWrapper>
   );
 };
 
@@ -116,7 +109,7 @@ export default MessagesByTypePage;
 
 MessagesByTypePage.getInitialProps = async ({ query, req, router, ...ctx }) => {
   if (!req) {
-    // client code
+    // Client code
     return { data: null };
   }
   // SSR code

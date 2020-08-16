@@ -7,24 +7,40 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       Thread of Message c4b1e9e2-0ca6-4a84-b6e5-538241f1b447 
     </h2>
     <div
-      class="Thread__InitialMessage-sc-1ygzf59-0 gANVOl"
+      class="Thread__InitialMessage-sc-1ygzf59-0 izuHtH"
     >
       <article
-        class="Message__StyledMessageItem-uraoec-0 dDlRBV"
+        class="Message__StyledMessageItem-uraoec-0 fdDMYU"
         data-testid="message-item"
       >
         <header>
           <h3>
-            Lorem ipsum dolor sit amet consectetur 
             <span>
-              🔒
+              Lorem ipsum dolor sit amet consectetur
+            </span>
+            <span>
+              🔒 
             </span>
           </h3>
+          <div
+            class="user"
+          >
+            <div
+              class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+            >
+              <img
+                alt="user"
+                src="https://i.pravatar.cc/70px?u=undefined"
+              />
+            </div>
+            <span
+              class="username"
+            />
+          </div>
         </header>
         <section>
-          Doloremque tenetur dolore iure nisi quidem laudantium, hic earum necessitatibus
           <p>
-            c4b1e9e2-0ca6-4a84-b6e5-538241f1b447
+            Doloremque tenetur dolore iure nisi quidem laudantium, hic earum necessitatibus
           </p>
         </section>
         <footer>
@@ -35,41 +51,140 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       </article>
     </div>
     <div
-      class="MessagesList__ListOfItemsStyled-epu0q5-0 dnvssR"
-      data-testid="thread-message-list"
+      class="MessagesList__SimpleBarStyled-epu0q5-0 AXUei"
+      data-simplebar="init"
+      style="max-height: 900px;"
     >
-      <article
-        class="Message__StyledMessageItem-uraoec-0 dDlRBV"
-        data-testid="message-item"
+      <div
+        class="simplebar-wrapper"
       >
-        <header>
-          <h3>
-            Delectus itaque dolores 
-            <span>
-              🔒
-            </span>
-          </h3>
-        </header>
-        <section>
-          odio illo possimus veniam qui ratione nihil
-          <p>
-            934bae862-bbb7-4b9d-83fe-555c8734be4e
-          </p>
-        </section>
-        <footer>
-          <p>
-            Sunday, August 2, 2020, 9:35:52 PM
-          </p>
-        </footer>
-      </article>
+        <div
+          class="simplebar-height-auto-observer-wrapper"
+        >
+          <div
+            class="simplebar-height-auto-observer"
+          />
+        </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+            style="right: 0px; bottom: 0px;"
+          >
+            <div
+              class="simplebar-content-wrapper"
+              style="height: auto; overflow-x: hidden; overflow-y: hidden;"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="MessagesList__ListOfItemsStyled-epu0q5-1 fefGqq"
+                  data-testid="thread-message-list"
+                >
+                  <article
+                    class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+                    data-testid="message-item"
+                  >
+                    <header>
+                      <h3>
+                        <span>
+                          Delectus itaque dolores
+                        </span>
+                        <span>
+                          🔒 
+                        </span>
+                      </h3>
+                      <div
+                        class="user"
+                      >
+                        <div
+                          class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+                        >
+                          <img
+                            alt="user"
+                            src="https://i.pravatar.cc/70px?u=undefined"
+                          />
+                        </div>
+                        <span
+                          class="username"
+                        />
+                      </div>
+                    </header>
+                    <section>
+                      <p>
+                        odio illo possimus veniam qui ratione nihil
+                      </p>
+                    </section>
+                    <footer>
+                      <p>
+                        Sunday, August 2, 2020, 9:35:52 PM
+                      </p>
+                    </footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+          style="width: 0px; height: 0px;"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-horizontal"
+        style="visibility: hidden;"
+      >
+        <div
+          class="simplebar-scrollbar simplebar-visible"
+          style="width: 0px; display: none;"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+        style="visibility: hidden;"
+      >
+        <div
+          class="simplebar-scrollbar simplebar-visible"
+          style="height: 0px; display: none;"
+        />
+      </div>
+    </div>
+    <div
+      class="WrapperUIMessage__UIMessageStyled-sc-1ppewmp-0 keOPA-d"
+    >
+      <div
+        class="InfoMessage__InfoMessageStyled-nkco7u-0 cdppXu CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
+      >
+        <span
+          class="info__label"
+        >
+          ℹ️
+        </span>
+        <span>
+           You need to Sign In to send messages!
+        </span>
+        <span
+          class="createMessage__info--signin"
+        >
+          <button
+            class="SigninButton__ButtonSigninStyled-sc-1vfh4b8-0 eDzvYV c-button"
+          >
+            Sign In
+          </button>
+        </span>
+      </div>
     </div>
     <form
-      class="FormStyled-j8ogoe-0 iIBCUw"
+      class="FormStyled-j8ogoe-0 ljgQnu"
       data-test="form"
       id="test"
     >
       <fieldset
         aria-busy="false"
+        disabled=""
       >
         <label
           for="title"

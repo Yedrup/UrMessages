@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import labels from '../data/labels';
+import { labels } from '../lib/config';
 const { applicationName } = labels;
 
 const Meta = () => {

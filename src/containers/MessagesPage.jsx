@@ -6,6 +6,9 @@ import styled from 'styled-components';
 
 const StyledTitle = styled.h1`
   text-transform: capitalize;
+  color: var(--main-color);
+  font-size: 2.5rem;
+  text-align: left;
 `;
 
 class MessagesPage extends Component {

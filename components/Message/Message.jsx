@@ -1,10 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import styled from 'styled-components';
 import Avatar, { avatarSize } from '../Avatar';
-import getRandomAvatarPhoto from '../../lib/utils/getRandomAvatar';
+import { getUserAvatarUUID } from '../../lib/utils/getAvatarImage';
+import { UserStateContext } from '../../contexts/UserContext';
 
 const StyledMessageItem = styled.article`
   --padding: 1rem 2.5rem;
@@ -22,18 +23,34 @@ const StyledMessageItem = styled.article`
     padding: var(--padding);
     color: #aaeeee;
     & h3 {
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      word-break: break-all;
+      text-align: left;
     }
     .user {
-      margin-right: 1rem;
       display: flex;
-      span {
-        margin-left: 1rem;
+      margin-right: 1rem;
+      .user__image {
+        position: relative;
       }
-      .username {
+      .user__name {
+        margin-left: 1rem;
         color: #aaeeeede;
+      }
+      .me-text {
+        position: absolute;
+        bottom: -1rem;
+        right: -1rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #ff00cad6;
+        border-radius: 50%;
+        transform: skew(10deg, -10deg);
+        text-align: center;
+        font-size: 1rem;
+        color: #f5f5f5;
       }
     }
   }
@@ -43,14 +60,15 @@ const StyledMessageItem = styled.article`
     text-align: justify;
     color: ${({ theme }) => theme.offWhite};
     p {
-      background: #0000002b;
       padding: 2rem 1rem;
+      background: #0000002b;
+      font-size: 1.7rem;
     }
   }
   footer {
     padding: var(--padding);
     text-align: right;
-    color: grey;
+    color: #d3d3d3;
     p {
       margin: 0.5rem;
     }
@@ -62,18 +80,28 @@ const StyledMessageItem = styled.article`
 
 const Message = ({ message }) => {
   if (!message) return null;
-  const { title, isPublic, content, id, isThreadAllowed, date, user } = message;
+  const {
+    title,
+    isPublic,
+    content,
+    id,
+    isThreadAllowed,
+    date,
+    userId,
+  } = message;
+  const { stateUser } = useContext(UserStateContext);
   const router = useRouter();
-
-  // fallback in case there is no router.query.type
+  // Fallback in case there is no router.query.type
   const type = router?.query?.type
     ? router?.query?.type
     : isPublic
     ? 'public'
     : 'private';
 
-  const imageUrl = getRandomAvatarPhoto(avatarSize);
-  // check if the current message is displayed on a thread page
+  const itsMe = userId && userId === stateUser?.userId;
+
+  const imageUrl = getUserAvatarUUID({ size: avatarSize, userId });
+  // Check if the current message is displayed on a thread page
   const areWeOnMessageThreadPage = !!router?.query?.id;
 
   return (
@@ -84,8 +112,11 @@ const Message = ({ message }) => {
           <span>{isPublic ? '📣' : '🔒'} </span>
         </h3>
         <div className="user">
-          <Avatar imageUrl={imageUrl} />
-          <span className="username">{user}</span>
+          <div className="user__image">
+            <Avatar imageUrl={imageUrl} />
+            {itsMe && <span className="me-text">me</span>}
+          </div>
+          <span className="user__name">{userId}</span>
         </div>
       </header>
       <section>
@@ -93,7 +124,6 @@ const Message = ({ message }) => {
       </section>
       <footer>
         <p>{date}</p>
-        {/* <p className="small-text">id:{id}</p> */}
         {isThreadAllowed && !areWeOnMessageThreadPage && (
           <Link
             href={{

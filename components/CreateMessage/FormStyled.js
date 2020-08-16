@@ -52,17 +52,14 @@ const FormStyled = styled.form`
     padding: 0;
 
     &[disabled] {
-      opacity: 0.45;
+      opacity: 0.25;
     }
     &::before {
       height: 10px;
       content: '';
       display: block;
       background-image: linear-gradient(
-        to right,
-        #a14ae2 0%,
-        ${({ theme }) => theme.highlight} 50%,
-        #a14ae2 100%
+        ${({ theme }) => theme.gradientToRight}
       );
     }
     &[aria-busy='true']::before {

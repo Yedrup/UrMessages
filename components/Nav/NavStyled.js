@@ -5,25 +5,33 @@ const NavStyled = styled.ul`
   padding: 0;
   display: flex;
   justify-self: end;
-  align-items: center;
   list-style: none;
-  font-size: 2rem;
+  font-size: 1.9rem;
+  grid-column: 1 / -1;
+  & > * {
+    padding: 0.5rem 1rem;
+  }
+  @media (max-width: 1300px) {
+    & {
+      width: 100%;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
 
   .link {
     cursor: pointer;
-    border: 0;
     position: relative;
-    padding: 1rem 3rem;
+    border: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    margin: 0 0.5rem;
     text-transform: uppercase;
-    font-size: 1.9rem;
-    font-weight: 700;
+    font-weight: 600;
     color: ${({ theme }) => theme.lightgrey};
     @media (max-width: 700px) {
       & {
-        font-size: 1.65rem;
-        padding: 0 0.5;
+        font-size: 1.25rem;
       }
     }
   }
@@ -41,13 +49,9 @@ const NavStyled = styled.ul`
       left: 0;
       right: 0;
       transform: skew(-60deg);
-    }
-  }
-
-  @media (max-width: 1300px) {
-    & {
-      width: 100%;
-      justify-content: center;
+      @media (max-width: 700px) {
+        height: 0.2rem;
+      }
     }
   }
 `;

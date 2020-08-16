@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import MessageItem from '../Message/Message';
 import SimpleBar from 'simplebar-react';
+import MessageItem from '../Message/Message';
 
 const SimpleBarStyled = styled(SimpleBar)`
   .simplebar-scrollbar:before {
@@ -11,12 +11,7 @@ const SimpleBarStyled = styled(SimpleBar)`
     right: 2px;
     opacity: 0;
     transition: opacity 0.2s linear;
-    background: linear-gradient(
-      to bottom,
-      #a14ae2 0%,
-      ${({ theme }) => theme.highlight} 50%,
-      #a14ae2 100%
-    );
+    background: linear-gradient(${({ theme }) => theme.gradientToBottom});
   }
 `;
 
@@ -33,8 +28,8 @@ const MessagesList = ({ messages }) => {
     <SimpleBarStyled
       style={{ maxHeight: 900 }}
       autoHide={false}
-      scrollbarMaxSize={400}
-      scrollbarMinSize={300}
+      scrollbarMaxSize={650}
+      scrollbarMinSize={425}
     >
       <ListOfItemsStyled data-testid="thread-message-list">
         {messages.map(message => {

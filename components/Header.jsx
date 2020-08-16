@@ -1,12 +1,35 @@
 import { useContext } from 'react';
-import { UIStateContext, UIDispatchContext } from '../contexts/UIContext';
+import wait from 'waait';
+import { UserStateContext } from '../contexts/UserContext';
 import styled from 'styled-components';
 import Link from 'next/link';
-
 import Nav from './Nav/Nav';
-import labels from '../data/labels';
+import User from './User';
+import { labels } from '../lib/config';
 
 const { applicationName } = labels;
+
+const StyledHeader = styled.header`
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: 1fr 10rem;
+    grid-auto-rows: 6.5rem;
+    grid-gap: 10px;
+    justify-content: space-between;
+    align-items: stretch;
+    padding:  1.5rem 2rem .5rem;;
+    background: #291c29;
+    box-shadow: ${({ theme }) => theme.elevation3};
+    @media (max-width: 1300px) {
+      position: relative;
+      justify-content: center;
+      padding: .5rem;
+    }
+  }
+`;
 
 const Logo = styled.h1`
   margin-left: 1rem;
@@ -14,38 +37,26 @@ const Logo = styled.h1`
   z-index: 2;
   transform: skew(-35deg);
   font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   a {
     padding: 0.5rem 1rem;
     color: ${({ theme }) => theme.highlight};
     text-decoration: none;
   }
   @media (max-width: 1300px) {
-    margin: 0;
-    text-align: center;
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 `;
 
-const StyledHeader = styled.header`
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    align-items: stretch;
-    background: #291c29;
-    box-shadow: ${({ theme }) => theme.elevation3};
-    @media (max-width: 1300px) {
-      grid-template-columns: 1fr;
-      justify-content: center;
-    }
+const UserHeaderStyled = styled(User)`
+    justify-self: end;
   }
 `;
 
 const Header = () => {
-  // const { stateUI } = useContext(UIStateContext);
-
+  const { stateUser } = useContext(UserStateContext);
   return (
     <StyledHeader>
       <Logo>
@@ -53,9 +64,8 @@ const Header = () => {
           <a>{applicationName}</a>
         </Link>
       </Logo>
+      {stateUser.userId && stateUser.isConnected && <UserHeaderStyled />}
       <Nav />
-      {/* <span>is loading : {stateUI.isLoading ? `🔀` : `🤘`}</span>
-      <span>is Error : {stateUI.isError ? `☠️` : `👌🏻`}</span> */}
     </StyledHeader>
   );
 };

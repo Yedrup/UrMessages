@@ -3,6 +3,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import DataProvider from '../../contexts/DataContext';
 import UIProvider from '../../contexts/UIContext';
+import UserProvider from '../../contexts/UserContext';
 import Page from '../containers/Page';
 import '../../public/nprogress.css';
 import 'simplebar/dist/simplebar.min.css';
@@ -24,11 +25,13 @@ export default function MyApp(props) {
   const { Component, ...pageProps } = props;
   return (
     <UIProvider>
-      <DataProvider>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-      </DataProvider>
+      <UserProvider>
+        <DataProvider>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </DataProvider>
+      </UserProvider>
     </UIProvider>
   );
 }

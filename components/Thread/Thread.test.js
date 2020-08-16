@@ -2,6 +2,7 @@ import { render, cleanup } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import DataProvider from '../../contexts/DataContext';
 import UIProvider from '../../contexts/UIContext';
+import UserProvider from '../../contexts/UserContext';
 import Thread from './Thread';
 
 import {
@@ -11,9 +12,11 @@ import {
 } from '../../lib/testUtils';
 
 const ContextWrapper = ({ children }) => (
-  <DataProvider>
-    <UIProvider>{children}</UIProvider>
-  </DataProvider>
+  <UserProvider>
+    <DataProvider>
+      <UIProvider>{children}</UIProvider>
+    </DataProvider>
+  </UserProvider>
 );
 
 ContextWrapper.propTypes = {

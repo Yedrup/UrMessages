@@ -2,13 +2,15 @@ import { render, cleanup } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import DataProvider from '../../contexts/DataContext';
 import UIProvider from '../../contexts/UIContext';
-
+import UserProvider from '../../contexts/UserContext';
 import CreateMessage from './CreateMessage';
 
 const ContextWrapper = ({ children }) => (
-  <DataProvider>
-    <UIProvider>{children}</UIProvider>
-  </DataProvider>
+  <UserProvider>
+    <DataProvider>
+      <UIProvider>{children}</UIProvider>
+    </DataProvider>
+  </UserProvider>
 );
 
 ContextWrapper.propTypes = {

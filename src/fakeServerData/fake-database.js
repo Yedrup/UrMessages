@@ -14,7 +14,7 @@ class FakeDB {
 
 FakeDB.prototype.updateMessages = function(type, newValue) {
   this.messages[type].messages = [...this.messages[type].messages, newValue];
-  // return the message created
+  // Return the message created
   return this.messages[type];
 };
 
@@ -22,9 +22,9 @@ FakeDB.prototype.updateThreadMessages = function(type, newMessageValue) {
   const listWhereToSearch = this.messages[type].threads;
   const threadSearched = this.searchThread(type, newMessageValue.parentId);
 
-  // create the thread if it doesn't exist
+  // Create the thread if it doesn't exist
   if (!threadSearched) {
-    // add the message to existing thread
+    // Add the message to existing thread
     this.messages[type].threads = [
       ...this.messages[type].threads,
       {
@@ -35,18 +35,18 @@ FakeDB.prototype.updateThreadMessages = function(type, newMessageValue) {
       },
     ];
   } else {
-    // update this thread messages to add the new message
+    // Update this thread messages to add the new message
     const updateThreadSearched = { ...threadSearched };
     updateThreadSearched.messages = [
       ...updateThreadSearched.messages,
       newMessageValue,
     ];
-    // find index to update the threads array
+    // Find index to update the threads array
     const threadToModifyIndex = listWhereToSearch.findIndex(
       currThread => currThread.parentId === newMessageValue.parentId
     );
 
-    // remove the old thread state from threads and add the updated version
+    // Remove the old thread state from threads and add the updated version
     this.messages[type].threads = [
       ...this.messages[type].threads.slice(0, threadToModifyIndex),
       updateThreadSearched,
@@ -60,9 +60,11 @@ FakeDB.prototype.findMessageById = function(type, id) {
   const listWhereToSearch = this.messages[type].messages;
   const messageSearched = findObjectByPropInArr(listWhereToSearch, 'id', id);
 
-  // find and return the related thread if it exists
+  // Find and return the related thread if it exists
   const thread = this.searchThread(type, id);
-  if (!thread) return { message: messageSearched, thread: null };
+  if (!messageSearched) return { message: null, thread: null };
+  if (messageSearched && !thread)
+    return { message: messageSearched, thread: null };
   return { message: messageSearched, thread };
 };
 

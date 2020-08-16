@@ -2,9 +2,9 @@
   "isPublic": false,
   "messages": [
     {
-      "id": "e0f17993-697b-4807-88b9-93e139396ddc",
+      "id": "099a6d07-268d-4512-9475-2eac73be98af",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "c8d1c9ca-47a9-401d-a2ea-23e8b6658235",
       "isPublic": false,
       "isThreadAllowed": true,
       "users": null,
@@ -16,7 +16,7 @@
     {
       "id": "934bae862-ddb7-4b9d-83fe-555c8734be4e",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "1f2cf317-debd-4294-8078-4a2cf7036e60",
       "isPublic": false,
       "isThreadAllowed": true,
       "users": [
@@ -30,7 +30,7 @@
     {
       "id": "934ba862-ddb7-4eb9d-83fe-555c8734be4e",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "c37346a6-a7e7-4b77-a7be-f3a9b2398f02",
       "isPublic": false,
       "isThreadAllowed": true,
       "users": [
@@ -44,7 +44,7 @@
     {
       "id": "bcd2bd25-170b-4ab6-a241-e3ea9171e969",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "e0f17993-697b-4807-88b9-93e139396ddc",
       "isPublic": false,
       "isThreadAllowed": true,
       "users": [
@@ -58,7 +58,7 @@
     {
       "id": "c4b1e9e2-0ca6-4a84-b6e5-538241f1b447",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "1677f769-8fb5-41b1-aa42-9110379a1717",
       "isPublic": false,
       "isThreadAllowed": true,
       "title": "Lorem ipsum dolor sit amet consectetur 🐈",
@@ -70,9 +70,23 @@
       "content": "Doloremque tenetur dolore iure nisi quidem laudantium, hic earum necessitatibus, odio illo possimus veniam qui ratione nihil"
     },
     {
+      "id": "c4b1e9e2-3ca6-4a84-b7e5-538241f1b447",
+      "parentId": null,
+      "userId": "66c77823-6a35-4ff1-a124-4eed83c0b04c",
+      "isPublic": false,
+      "isThreadAllowed": true,
+      "title": "Doloremque tenetur dolore iure",
+      "users": [
+        "55ac9363-267a-40bd-93a0-23cdb7kct390"
+      ],
+      "date": "Sunday, August 2, 2020, 5:55:06 PM",
+      "dateInMs": 1596383706000,
+      "content": "deserunt quod at inventore corporis est ad voluptatum atque natus beatae illo possimus veniam qui ratione nihil"
+    },
+    {
       "id": "af1a5865-a036-4c37-b824-b9842119bb81",
       "parentId": null,
-      "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+      "userId": "affe9751-c1f3-4d39-beef-84aaa3fe3620",
       "isPublic": false,
       "isThreadAllowed": true,
       "users": null,
@@ -91,13 +105,13 @@
         {
           "id": "934bae862-bbb7-4b9d-83fe-555c8734be4e",
           "parentId": "29711c6d-fe5a-4908-8094-ba31e102b28d",
-          "user": "1677f769-8fb5-41b1-aa42-9110379a1717",
+          "userId": "6cfdc268-ae34-4bf3-b44a-46d069f38450",
           "isPublic": false,
           "isThreadAllowed": false,
-          "title": "Delectus itaque dolores 🐶",
+          "title": "Delectus itaque dolores",
           "date": "Sunday, August 2, 2020, 9:35:52 PM",
           "dateInMs": 1596396952000,
-          "content": "odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil"
+          "content": "odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil odio illo possimus veniam qui ratione nihil 😄"
         }
       ]
     }

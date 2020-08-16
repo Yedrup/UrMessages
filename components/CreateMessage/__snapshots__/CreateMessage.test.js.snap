@@ -2,13 +2,39 @@
 
 exports[`<CreateMessage/> properly renders the component - snapshot 1`] = `
 <DocumentFragment>
+  <div
+    class="WrapperUIMessage__UIMessageStyled-sc-1ppewmp-0 keOPA-d"
+  >
+    <div
+      class="InfoMessage__InfoMessageStyled-nkco7u-0 cdppXu CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
+    >
+      <span
+        class="info__label"
+      >
+        ℹ️
+      </span>
+      <span>
+         You need to Sign In to send messages!
+      </span>
+      <span
+        class="createMessage__info--signin"
+      >
+        <button
+          class="SigninButton__ButtonSigninStyled-sc-1vfh4b8-0 eDzvYV c-button"
+        >
+          Sign In
+        </button>
+      </span>
+    </div>
+  </div>
   <form
-    class="FormStyled-j8ogoe-0 iIBCUw"
+    class="FormStyled-j8ogoe-0 ljgQnu"
     data-test="form"
     id="test"
   >
     <fieldset
       aria-busy="false"
+      disabled=""
     >
       <label
         for="title"
