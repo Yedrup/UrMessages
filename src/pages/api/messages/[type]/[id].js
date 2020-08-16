@@ -10,14 +10,6 @@ export default async function getMessageById(req, res) {
   const isMethodAllowed = methodAllowed.includes(req.method);
   if (!isMethodAllowed) res.status(405).send('This Method is not allowed');
 
-  // const { userId } = req.body;
-  // // check if has the authorization
-  // console.log({ userId, USER_TEST_ID });
-  // if (userId !== USER_TEST_ID) {
-  //   res.status(401).send("You don't have the necessary rights.");
-  //   return;
-  // }
-
   // Post message for this route is a thread message treatment cause it's related to a specific message ID
   if (req.method === 'POST') {
     const updatedTypeList = currentFakeDB.updateThreadMessages(type, req.body);

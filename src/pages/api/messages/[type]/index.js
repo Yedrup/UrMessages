@@ -7,19 +7,6 @@ export default async function getAllMessagesFromType(req, res) {
   const isMethodAllowed = methodAllowed.includes(req.method);
   if (!isMethodAllowed) res.status(405).send('This Method is not allowed');
 
-  // const { userId } = req.body;
-  // // check if userId is provided
-  // if (!userId) {
-  //   res.status(400).send('Missing parameters');
-  //   return;
-  // }
-  // // check if has the authorization
-  // console.log({ userId, USER_TEST_ID });
-  // if (userId !== USER_TEST_ID) {
-  //   res.status(401).send("You don't have the necessary rights.");
-  //   return;
-  // }
-
   // Adding the message in the fake DB
   if (req.method === 'POST') {
     const type = req.body.isPublic ? 'public' : 'private';
