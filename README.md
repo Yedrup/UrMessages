@@ -3,10 +3,10 @@
 **📖 Table of Contents**
 
 - [Intro](#intro)
-- [Project installation and run](#👇-install-👟-run-and-🧪-test)
-  - [👇 Install](#-👇-install)
-  - [👟 Run](#-👟-run)
-  - [🧪 Test](#-🧪-Test-)
+- [Project installation and run](#install-run-and-test)
+  - [👇 Install](#👇-install)
+  - [👟 Run](#👟-run)
+  - [🧪 Test](#🧪-Test-)
 - [The way the project works so far](#👉-the-way-the-project-works-so-far)
 
 ## **_Intro_**

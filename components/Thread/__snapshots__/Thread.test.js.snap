@@ -10,7 +10,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       class="Thread__InitialMessage-sc-1ygzf59-0 izuHtH"
     >
       <article
-        class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+        class="Message__StyledMessageItem-uraoec-0 isHSvA"
         data-testid="message-item"
       >
         <header>
@@ -26,15 +26,19 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
             class="user"
           >
             <div
-              class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+              class="user__image"
             >
-              <img
-                alt="user"
-                src="https://i.pravatar.cc/70px?u=undefined"
-              />
+              <div
+                class="Avatar__AvatarStyled-fet300-0 Avatar___StyledAvatarStyled-fet300-1 eecPIG c-avatar"
+              >
+                <img
+                  alt="user undefined"
+                  src="https://i.pravatar.cc/70px?img=30"
+                />
+              </div>
             </div>
             <span
-              class="username"
+              class="user__name"
             />
           </div>
         </header>
@@ -51,7 +55,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       </article>
     </div>
     <div
-      class="MessagesList__SimpleBarStyled-epu0q5-0 AXUei"
+      class="MessagesList__SimpleBarStyled-epu0q5-0 bmTbbH"
       data-simplebar="init"
       style="max-height: 900px;"
     >
@@ -84,7 +88,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
                   data-testid="thread-message-list"
                 >
                   <article
-                    class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+                    class="Message__StyledMessageItem-uraoec-0 isHSvA"
                     data-testid="message-item"
                   >
                     <header>
@@ -100,15 +104,19 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
                         class="user"
                       >
                         <div
-                          class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+                          class="user__image"
                         >
-                          <img
-                            alt="user"
-                            src="https://i.pravatar.cc/70px?u=undefined"
-                          />
+                          <div
+                            class="Avatar__AvatarStyled-fet300-0 Avatar___StyledAvatarStyled-fet300-1 eecPIG c-avatar"
+                          >
+                            <img
+                              alt="user undefined"
+                              src="https://i.pravatar.cc/70px?img=14"
+                            />
+                          </div>
                         </div>
                         <span
-                          class="username"
+                          class="user__name"
                         />
                       </div>
                     </header>
@@ -156,7 +164,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       class="WrapperUIMessage__UIMessageStyled-sc-1ppewmp-0 keOPA-d"
     >
       <div
-        class="InfoMessage__InfoMessageStyled-nkco7u-0 cdppXu CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
+        class="InfoMessage__InfoMessageStyled-nkco7u-0 foxfbm CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
       >
         <span
           class="info__label"
@@ -178,7 +186,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       </div>
     </div>
     <form
-      class="FormStyled-j8ogoe-0 ljgQnu"
+      class="FormStyled-j8ogoe-0 eVHhBM"
       data-test="form"
       id="test"
     >
@@ -189,7 +197,11 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
         <label
           for="title"
         >
-          Title
+          <span
+            class="subtitle"
+          >
+            Title
+          </span>
           <input
             id="title"
             name="title"
@@ -202,7 +214,11 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
         <label
           for="content"
         >
-          Message
+          <span
+            class="subtitle"
+          >
+            Message
+          </span>
           <textarea
             id="content"
             name="content"

@@ -25,10 +25,8 @@ export default async function getMessageById(req, res) {
       req.query.id
     );
     if (!messageSearched.message) {
-      res.status(404).send('404 - Message is not found');
-      return;
-    } else {
-      res.status(200).json(messageSearched);
+      return res.status(404).send('404 - Message is not found');
     }
+    return res.status(200).json(messageSearched);
   }
 }

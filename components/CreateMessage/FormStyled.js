@@ -10,22 +10,30 @@ export const loading = keyframes`
 `;
 
 const FormStyled = styled.form`
-  margin: 2rem auto;
-  border: 2px solid grey;
+  margin: 4rem auto;
   padding: 1.5rem;
+  text-align: left;
+  border: 1px solid grey;
   line-height: 1.5;
   font-size: 1.5rem;
   font-weight: 600;
   label {
     display: block;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     text-align: left;
+    .subtitle {
+      display: inline-block;
+      margin: 1rem 0;
+      font-size: 1.85rem;
+      font-weight: 500;
+      color: ${({ theme }) => theme.lightgrey};
+    }
   }
   input,
   textarea,
   select {
     width: 100%;
-    padding: 0.5rem;
+    padding: 1.25rem;
     font-size: 1.5rem;
     border: 1px solid black;
     background: white;
@@ -36,9 +44,6 @@ const FormStyled = styled.form`
   }
   textarea {
     min-height: 7rem;
-  }
-  button {
-    align-self: center;
   }
   button,
   input[type='submit'] {
@@ -55,7 +60,7 @@ const FormStyled = styled.form`
       opacity: 0.25;
     }
     &::before {
-      height: 10px;
+      height: 0.7rem;
       content: '';
       display: block;
       background-image: linear-gradient(

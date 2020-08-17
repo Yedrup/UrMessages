@@ -115,7 +115,7 @@ const CreateMessage = ({ ctx }) => {
           {error && stateUI.isError && <Error error={error} />}
 
           <label htmlFor="title">
-            Title
+            <span className="subtitle">Title</span>
             <input
               type="text"
               id="title"
@@ -127,7 +127,7 @@ const CreateMessage = ({ ctx }) => {
             />
           </label>
           <label htmlFor="content">
-            Message
+            <span className="subtitle">Message</span>
             <textarea
               id="content"
               name="content"

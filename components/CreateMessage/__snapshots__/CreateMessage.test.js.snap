@@ -6,7 +6,7 @@ exports[`<CreateMessage/> properly renders the component - snapshot 1`] = `
     class="WrapperUIMessage__UIMessageStyled-sc-1ppewmp-0 keOPA-d"
   >
     <div
-      class="InfoMessage__InfoMessageStyled-nkco7u-0 cdppXu CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
+      class="InfoMessage__InfoMessageStyled-nkco7u-0 foxfbm CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
     >
       <span
         class="info__label"
@@ -28,7 +28,7 @@ exports[`<CreateMessage/> properly renders the component - snapshot 1`] = `
     </div>
   </div>
   <form
-    class="FormStyled-j8ogoe-0 ljgQnu"
+    class="FormStyled-j8ogoe-0 eVHhBM"
     data-test="form"
     id="test"
   >
@@ -39,7 +39,11 @@ exports[`<CreateMessage/> properly renders the component - snapshot 1`] = `
       <label
         for="title"
       >
-        Title
+        <span
+          class="subtitle"
+        >
+          Title
+        </span>
         <input
           id="title"
           name="title"
@@ -52,7 +56,11 @@ exports[`<CreateMessage/> properly renders the component - snapshot 1`] = `
       <label
         for="content"
       >
-        Message
+        <span
+          class="subtitle"
+        >
+          Message
+        </span>
         <textarea
           id="content"
           name="content"

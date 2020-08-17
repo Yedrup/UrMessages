@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 import Header from '../../components/Header';
 import Meta from '../../components/Meta';
-import styled, { ThemeProvider } from 'styled-components';
 import theme from '../../theme/theme';
 import { GlobalStyle } from '../../theme/GlobalStyle';
 
@@ -14,7 +14,7 @@ const InnerStyled = styled.div`
   margin: 0 auto;
   padding: 2rem;
   @media (max-width: 700px) {
-    padding: 0;
+    padding: 1.5rem;
   }
 `;
 

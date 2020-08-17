@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { UserStateContext } from '../../contexts/UserContext';
 
 const InfoMessageStyled = styled.div`
-  padding: 1rem;
+  padding: 2rem 1rem;
   background: ${({ theme }) => theme.info};
   font-size: 2rem;
   p {

@@ -3,7 +3,7 @@
 exports[`<Message/> properly renders the component - snapshot 1`] = `
 <DocumentFragment>
   <article
-    class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+    class="Message__StyledMessageItem-uraoec-0 isHSvA"
     data-testid="message-item"
   >
     <header>
@@ -19,15 +19,19 @@ exports[`<Message/> properly renders the component - snapshot 1`] = `
         class="user"
       >
         <div
-          class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+          class="user__image"
         >
-          <img
-            alt="user"
-            src="https://i.pravatar.cc/70px?u=undefined"
-          />
+          <div
+            class="Avatar__AvatarStyled-fet300-0 Avatar___StyledAvatarStyled-fet300-1 eecPIG c-avatar"
+          >
+            <img
+              alt="user undefined"
+              src="https://i.pravatar.cc/70px?img=29"
+            />
+          </div>
         </div>
         <span
-          class="username"
+          class="user__name"
         />
       </div>
     </header>

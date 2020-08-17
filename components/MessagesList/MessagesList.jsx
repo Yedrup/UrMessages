@@ -9,8 +9,6 @@ const SimpleBarStyled = styled(SimpleBar)`
     border-radius: 7px;
     left: 2px;
     right: 2px;
-    opacity: 0;
-    transition: opacity 0.2s linear;
     background: linear-gradient(${({ theme }) => theme.gradientToBottom});
   }
 `;

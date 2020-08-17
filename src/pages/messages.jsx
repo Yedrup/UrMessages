@@ -10,6 +10,9 @@ import SigninPresentation from '../../components/Sign/SigninPresentation';
 const SectionHomeStyled = styled.section`
   header {
     display: flex;
+    h2 {
+      font-size: 2rem;
+    }
   }
   header a:before {
     content: '→';
@@ -18,8 +21,7 @@ const SectionHomeStyled = styled.section`
 
   header a {
     margin: 0 1rem;
-    color: #daf3f1;
-    font-size: 1.5rem;
+    color: #9fe3e7;
     font-weight: 500;
     border-bottom: 1px solid #daf3f187;
   }
@@ -28,7 +30,6 @@ const SectionHomeStyled = styled.section`
 const HomeStyled = styled.div`
   text-align: left;
   --padding-list: 0rem 2rem;
-
   .home__title {
     font-size: 2.7rem;
     color: var(--main-color);
@@ -51,8 +52,8 @@ const MessagesHome = ({ lastPublicMessage, lastPrivateMessage }) => {
             <header>
               <h2>
                 Newest
-                <Link href="/messages/public">
-                  <a>Public Messages</a>
+                <Link href="/messages/[type]" as={`/messages/public`}>
+                  <a>📣 Public Messages</a>
                 </Link>
               </h2>
             </header>
@@ -68,8 +69,8 @@ const MessagesHome = ({ lastPublicMessage, lastPrivateMessage }) => {
               <header>
                 <h2>
                   Newest
-                  <Link href="/messages/private">
-                    <a>Private Messages</a>
+                  <Link href="/messages/[type]" as={`/messages/private`}>
+                    <a>🔒 Private Messages</a>
                   </Link>
                 </h2>
               </header>

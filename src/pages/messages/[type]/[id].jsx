@@ -51,7 +51,6 @@ const SingleMessagePage = ({ pageProps }) => {
       'parentId',
       id
     );
-    console.log(messageSearched, threadSearched);
     if (!messageSearched) {
       let err = new Error('Message not found! 😕');
       throw err;

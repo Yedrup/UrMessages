@@ -3,7 +3,7 @@
 exports[`<MessageList/> properly renders the component - snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MessagesList__SimpleBarStyled-epu0q5-0 AXUei"
+    class="MessagesList__SimpleBarStyled-epu0q5-0 bmTbbH"
     data-simplebar="init"
     style="max-height: 900px;"
   >
@@ -36,7 +36,7 @@ exports[`<MessageList/> properly renders the component - snapshot 1`] = `
                 data-testid="thread-message-list"
               >
                 <article
-                  class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+                  class="Message__StyledMessageItem-uraoec-0 isHSvA"
                   data-testid="message-item"
                 >
                   <header>
@@ -52,15 +52,19 @@ exports[`<MessageList/> properly renders the component - snapshot 1`] = `
                       class="user"
                     >
                       <div
-                        class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+                        class="user__image"
                       >
-                        <img
-                          alt="user"
-                          src="https://i.pravatar.cc/70px?u=undefined"
-                        />
+                        <div
+                          class="Avatar__AvatarStyled-fet300-0 Avatar___StyledAvatarStyled-fet300-1 eecPIG c-avatar"
+                        >
+                          <img
+                            alt="user undefined"
+                            src="https://i.pravatar.cc/70px?img=44"
+                          />
+                        </div>
                       </div>
                       <span
-                        class="username"
+                        class="user__name"
                       />
                     </div>
                   </header>
@@ -83,7 +87,7 @@ exports[`<MessageList/> properly renders the component - snapshot 1`] = `
                   </footer>
                 </article>
                 <article
-                  class="Message__StyledMessageItem-uraoec-0 fdDMYU"
+                  class="Message__StyledMessageItem-uraoec-0 isHSvA"
                   data-testid="message-item"
                 >
                   <header>
@@ -99,15 +103,19 @@ exports[`<MessageList/> properly renders the component - snapshot 1`] = `
                       class="user"
                     >
                       <div
-                        class="Avatar__AvatarStyled-fet300-0 eWozQl c-avatar"
+                        class="user__image"
                       >
-                        <img
-                          alt="user"
-                          src="https://i.pravatar.cc/70px?u=undefined"
-                        />
+                        <div
+                          class="Avatar__AvatarStyled-fet300-0 Avatar___StyledAvatarStyled-fet300-1 eecPIG c-avatar"
+                        >
+                          <img
+                            alt="user undefined"
+                            src="https://i.pravatar.cc/70px?img=8"
+                          />
+                        </div>
                       </div>
                       <span
-                        class="username"
+                        class="user__name"
                       />
                     </div>
                   </header>

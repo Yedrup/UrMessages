@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { UserStateContext } from '../../contexts/UserContext';
 import NavStyled from './NavStyled';
 import Connect from './Connect';
+import User from '../User';
 
 const Nav = () => {
   const { stateUser } = useContext(UserStateContext);
@@ -33,20 +34,27 @@ const Nav = () => {
         </Link>
       </li>
       {stateUser?.isConnected && (
-        <li>
-          <Link href="/messages/[type]" as={`/messages/private`}>
-            <a
-              className={`link ${getActiveClass(
-                currentPath,
-                '/messages/private'
-              )}`}
-            >
-              🔒 Private
-            </a>
-          </Link>
-        </li>
+        <>
+          <li>
+            <Link href="/messages/[type]" as={`/messages/private`}>
+              <a
+                className={`link ${getActiveClass(
+                  currentPath,
+                  '/messages/private'
+                )}`}
+              >
+                🔒 Private
+              </a>
+            </Link>
+          </li>
+        </>
       )}
       <Connect />
+      {stateUser.userId && stateUser.isConnected && (
+        <li className="user__avatar">
+          <User />
+        </li>
+      )}
     </NavStyled>
   );
 };

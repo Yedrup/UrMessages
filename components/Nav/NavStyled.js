@@ -1,10 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const signingIn = keyframes`
+  from {
+    /* transform: translateZ(-50vh); */
+    opacity: 0;
+  }
+  to {
+    /* transform: translateZ(0); */
+    opacity: 1;
+  }
+`;
 
 const NavStyled = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
   justify-self: end;
+  align-items: center;
   list-style: none;
   font-size: 1.9rem;
   grid-column: 1 / -1;
@@ -31,7 +43,7 @@ const NavStyled = styled.ul`
     color: ${({ theme }) => theme.lightgrey};
     @media (max-width: 700px) {
       & {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -52,6 +64,13 @@ const NavStyled = styled.ul`
       @media (max-width: 700px) {
         height: 0.2rem;
       }
+    }
+  }
+  .user__avatar {
+    animation: ${signingIn} 0.9s ease-out;
+    @media (max-width: 700px) {
+      position: absolute;
+      top: 0;
     }
   }
 `;

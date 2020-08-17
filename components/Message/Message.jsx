@@ -3,13 +3,12 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Avatar, { avatarSize } from '../Avatar';
-import { getUserAvatarUUID } from '../../lib/utils/getAvatarImage';
+import Avatar from '../Avatar';
 import { UserStateContext } from '../../contexts/UserContext';
 
 const StyledMessageItem = styled.article`
   --padding: 1rem 2.5rem;
-  padding: 0;
+  padding: var(--padding);
   background: ${({ theme }) => theme.backgroundCard};
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.elevation1};
@@ -20,7 +19,6 @@ const StyledMessageItem = styled.article`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--padding);
     color: #aaeeee;
     & h3 {
       width: 100%;
@@ -55,18 +53,20 @@ const StyledMessageItem = styled.article`
     }
   }
   section {
-    padding: var(--padding);
     overflow-wrap: anywhere;
     text-align: justify;
     color: ${({ theme }) => theme.offWhite};
     p {
-      padding: 2rem 1rem;
+      margin: 4rem 0;
+      padding: 1.5rem;
       background: #0000002b;
       font-size: 1.7rem;
+      @media (max-width: 700px) {
+        margin: 2rem 0;
+      }
     }
   }
   footer {
-    padding: var(--padding);
     text-align: right;
     color: #d3d3d3;
     p {
@@ -100,7 +100,6 @@ const Message = ({ message }) => {
 
   const itsMe = userId && userId === stateUser?.userId;
 
-  const imageUrl = getUserAvatarUUID({ size: avatarSize, userId });
   // Check if the current message is displayed on a thread page
   const areWeOnMessageThreadPage = !!router?.query?.id;
 
@@ -113,7 +112,7 @@ const Message = ({ message }) => {
         </h3>
         <div className="user">
           <div className="user__image">
-            <Avatar imageUrl={imageUrl} />
+            <Avatar userId={userId} />
             {itsMe && <span className="me-text">me</span>}
           </div>
           <span className="user__name">{userId}</span>
