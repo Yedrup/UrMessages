@@ -23,13 +23,12 @@ const SectionHomeStyled = styled.section`
     margin: 0 1rem;
     color: #9fe3e7;
     font-weight: 500;
-    border-bottom: 1px solid #daf3f187;
+    border-bottom: 2.5px solid #daf3f187;
   }
 `;
 
 const HomeStyled = styled.div`
   text-align: left;
-  --padding-list: 0rem 2rem;
   .home__title {
     font-size: 2.7rem;
     color: var(--main-color);

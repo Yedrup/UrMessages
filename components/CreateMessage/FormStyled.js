@@ -48,6 +48,7 @@ const FormStyled = styled.form`
   button,
   input[type='submit'] {
     font-size: 1.5rem;
+    padding: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05rem;

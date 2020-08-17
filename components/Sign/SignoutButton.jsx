@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import wait from 'waait';
 import styled from 'styled-components';
 import {
   UserStateContext,
@@ -25,7 +24,6 @@ const SignoutButton = () => {
     dispatchUI({
       type: 'START_BUSY',
     });
-    // await wait(1000);
     await disconnect({ userId: stateUser.userId })
       .then(({ message }) => {
         dispatchUser({ type: 'USER_DISCONNECTION', message });

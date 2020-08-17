@@ -4,8 +4,14 @@ import Info from '../../components/UIFeedbackMessages/InfoMessage';
 import SigninButton from '../../components/Sign/SigninButton';
 
 const SigninPresentationStyled = styled.div`
-  .info {
+  --padding-list: 0rem 2rem;
+  .info__label__icon {
     font-size: 2rem;
+  }
+  .info__label__message {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
   .info__list {
     display: flex;
@@ -20,7 +26,7 @@ const SigninPresentationStyled = styled.div`
       color: ${({ theme }) => theme.backgroundCard};
     }
   }
-  .info--signin {
+  .info__signinButton {
     margin: 0 1rem;
     padding: var(--padding-list);
     button {
@@ -49,7 +55,7 @@ const SigninPresentation = () => {
             <span>✓</span> Private Box
           </li>
         </ul>
-        <span className="info--signin">
+        <span className="info__signinButton">
           <SigninButton />
         </span>
       </Info>

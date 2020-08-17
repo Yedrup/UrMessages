@@ -24,7 +24,7 @@ const Home = ({ pageProps }) => {
   const lastPrivateMessage =
     stateData?.private?.messages[stateData?.private?.messages?.length - 1];
 
-  // SSR rendering, initialize store lists with the data
+  // SSR rendering (cause there is data passing by props), initialize store lists with the data
   if (!isStoreInit && data) {
     dispatchData({
       type: 'INITIALIZE_ALL_LISTS_TYPES',
@@ -34,11 +34,9 @@ const Home = ({ pageProps }) => {
 
   useEffect(() => {
     // When navigating the data is set to null inside getInitialProps
-    // Init the store with public messages
     const errorHandler = err => {
       dispatchUI({
         type: 'IS_ERROR',
-        payload: { ...err },
       });
     };
 

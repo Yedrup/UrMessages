@@ -59,7 +59,7 @@ exports[`<MessageList/> properly renders the component - snapshot 1`] = `
                         >
                           <img
                             alt="user undefined"
-                            src="https://i.pravatar.cc/70px?img=44"
+                            src="https://i.pravatar.cc/70px?img=40"
                           />
                         </div>
                       </div>
@@ -110,7 +110,7 @@ exports[`<MessageList/> properly renders the component - snapshot 1`] = `
                         >
                           <img
                             alt="user undefined"
-                            src="https://i.pravatar.cc/70px?img=8"
+                            src="https://i.pravatar.cc/70px?img=10"
                           />
                         </div>
                       </div>

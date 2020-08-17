@@ -9,6 +9,7 @@ const theme = {
   offWhite: '#EDEDED',
   error: '#d32f2f',
   info: '#0097a7',
+  success: '#00796b',
   backgroundBody: '#121212',
   backgroundCard: '#3f2c43',
   connectFontSize: '1.85rem',

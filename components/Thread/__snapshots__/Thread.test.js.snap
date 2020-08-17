@@ -33,7 +33,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
               >
                 <img
                   alt="user undefined"
-                  src="https://i.pravatar.cc/70px?img=30"
+                  src="https://i.pravatar.cc/70px?img=11"
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
                           >
                             <img
                               alt="user undefined"
-                              src="https://i.pravatar.cc/70px?img=14"
+                              src="https://i.pravatar.cc/70px?img=45"
                             />
                           </div>
                         </div>
@@ -164,14 +164,16 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       class="WrapperUIMessage__UIMessageStyled-sc-1ppewmp-0 keOPA-d"
     >
       <div
-        class="InfoMessage__InfoMessageStyled-nkco7u-0 foxfbm CreateMessage__InfoStyled-sc-9nd6cs-0 hyiNSy"
+        class="InfoMessage__InfoMessageStyled-nkco7u-0 lggyRF CreateMessage__InfoStyled-sc-9nd6cs-0 fGSPqr"
       >
         <span
-          class="info__label"
+          class="info__label__icon"
         >
           ℹ️
         </span>
-        <span>
+        <span
+          class="info__label__message"
+        >
            You need to Sign In to send messages!
         </span>
         <span
@@ -186,7 +188,7 @@ exports[`<Thread/> properly renders the component - snapshot 1`] = `
       </div>
     </div>
     <form
-      class="FormStyled-j8ogoe-0 eVHhBM"
+      class="FormStyled-j8ogoe-0 gOWoJT"
       data-test="form"
       id="test"
     >

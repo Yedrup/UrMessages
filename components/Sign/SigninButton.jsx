@@ -33,7 +33,6 @@ const SigninButton = () => {
       .catch(err => {
         dispatchUI({
           type: 'IS_ERROR',
-          payload: err,
         });
         dispatchUI({
           type: 'END_BUSY',

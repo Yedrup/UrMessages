@@ -10,6 +10,7 @@ import SigninButton from '../Sign/SigninButton';
 import FormStyled from './FormStyled';
 import Error from '../UIFeedbackMessages/ErrorMessage';
 import Info from '../UIFeedbackMessages/InfoMessage';
+import Success from '../UIFeedbackMessages/SuccessMessage';
 
 const InfoStyled = styled(Info)`
   display: flex;
@@ -19,29 +20,41 @@ const InfoStyled = styled(Info)`
     padding: 1rem 0;
     background: ${({ theme }) => theme.highlightSecondary};
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.95rem;
   }
 `;
 
 const CreateMessage = ({ ctx }) => {
   const { id, isPublic, parentId } = ctx;
-  const type = isPublic ? 'public' : 'private';
 
   const { dispatchData } = useContext(DataDispatchContext);
   const { dispatchUI } = useContext(UIDispatchContext);
   const { stateUI } = useContext(UIStateContext);
   const { stateUser } = useContext(UserStateContext);
 
+  const type = isPublic ? 'public' : 'private';
   let defaultFormValues = { title: '', content: '', type };
+
   const [values, setValues] = useState(defaultFormValues);
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Reset the form on disconnection
   useEffect(() => {
     if (!stateUser.isConnected) setValues({ ...defaultFormValues });
     return () => {};
   }, [stateUser?.isConnected]);
+
+  // Reset success Message to false to make it disappear
+  useEffect(() => {
+    if (isSuccess) {
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 3000);
+    }
+    return () => {};
+  }, [isSuccess]);
 
   const handleChange = e => {
     e.preventDefault();
@@ -64,29 +77,31 @@ const CreateMessage = ({ ctx }) => {
       user: stateUser?.userId,
       content,
     });
-    await postMessage({ message: newFormattedMessage })
-      .then(result => {
-        // Dispatch the new list updated
-        dispatchData({
-          type: 'CREATE_MESSAGE',
-          payload: { result, type },
-        });
-        dispatchUI({
-          type: 'END_BUSY',
-        });
-        // Reset the form on success
-        setValues({ ...defaultFormValues });
-      })
-      .catch(err => {
-        setError(err);
-        dispatchUI({
-          type: 'IS_ERROR',
-          payload: { ...err },
-        });
-        dispatchUI({
-          type: 'END_BUSY',
-        });
+
+    try {
+      const result = await postMessage({ message: newFormattedMessage });
+      // Dispatch the new list updated
+      dispatchData({
+        type: 'CREATE_MESSAGE',
+        payload: { result, type },
       });
+      dispatchUI({
+        type: 'END_BUSY',
+      });
+      // Reset the form on success
+      setValues({ ...defaultFormValues });
+      // Allow to display success message
+      setIsSuccess(true);
+    } catch (err) {
+      // Allow to display error message
+      setError(err);
+      dispatchUI({
+        type: 'IS_ERROR',
+      });
+      dispatchUI({
+        type: 'END_BUSY',
+      });
+    }
     NProgress.done();
     setIsFormSubmitting(false);
   };
@@ -113,7 +128,9 @@ const CreateMessage = ({ ctx }) => {
           aria-busy={stateUI?.isBusy}
         >
           {error && stateUI.isError && <Error error={error} />}
-
+          {isSuccess && (
+            <Success success={{ message: 'Message successfully sent!' }} />
+          )}
           <label htmlFor="title">
             <span className="subtitle">Title</span>
             <input
